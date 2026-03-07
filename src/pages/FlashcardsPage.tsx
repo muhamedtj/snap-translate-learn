@@ -1,10 +1,12 @@
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import FlashCard from "@/components/FlashCard";
 import { allVocabWords } from "@/lib/mock-data";
 
 const FlashcardsPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <div className="min-h-screen px-5 pt-14 pb-24">
@@ -16,8 +18,8 @@ const FlashcardsPage = () => {
           <ArrowLeft size={18} />
         </button>
         <div>
-          <h1 className="text-lg font-semibold text-foreground">Flashcards</h1>
-          <p className="text-xs text-muted-foreground">{allVocabWords.length} words saved</p>
+          <h1 className="text-lg font-semibold text-foreground">{t("flashcards.title")}</h1>
+          <p className="text-xs text-muted-foreground">{t("flashcards.wordsSaved", { count: allVocabWords.length })}</p>
         </div>
       </div>
 

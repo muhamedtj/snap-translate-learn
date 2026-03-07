@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Учись у мира вокруг тебя"
+  },
+  "nav": {
+    "home": "Главная",
+    "history": "История",
+    "profile": "Профиль"
+  },
+  "dashboard": {
+    "snaps": "Сканы",
+    "words": "Слова",
+    "streak": "Серия",
+    "scanAndLearn": "Сканировать",
+    "recentSnaps": "Недавние сканы",
+    "seeAll": "Все"
+  },
+  "scan": {
+    "title": "Сканировать",
+    "tapToUpload": "Нажмите, чтобы загрузить",
+    "fileTypes": "JPG, PNG до 10 МБ",
+    "analyzing": "Анализ изображения…",
+    "extracting": "Извлечение текста и перевод",
+    "complete": "Анализ завершён!",
+    "camera": "Камера",
+    "gallery": "Галерея"
+  },
+  "result": {
+    "original": "Оригинал",
+    "translation": "Перевод",
+    "grammarNotes": "Грамматика",
+    "vocabulary": "Словарь",
+    "scannedAlt": "Сканированное"
+  },
+  "history": {
+    "title": "История",
+    "subtitle": "Все ваши сканированные изображения"
+  },
+  "flashcards": {
+    "title": "Карточки",
+    "wordsSaved": "{{count}} слов сохранено",
+    "tapToFlip": "Нажмите, чтобы перевернуть"
+  },
+  "profile": {
+    "role": "Исследователь языков",
+    "totalSnaps": "Всего сканов",
+    "wordsLearned": "Слов изучено",
+    "mastered": "Освоено",
+    "dayStreak": "Дней подряд",
+    "flashcards": "Карточки",
+    "settings": "Настройки",
+    "helpSupport": "Помощь"
+  },
+  "settings": {
+    "title": "Настройки",
+    "language": "Язык приложения",
+    "languageDesc": "Выберите язык интерфейса",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español"
+    }
+  }
+}

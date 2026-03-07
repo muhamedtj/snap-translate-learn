@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Learn from the world around you"
+  },
+  "nav": {
+    "home": "Home",
+    "history": "History",
+    "profile": "Profile"
+  },
+  "dashboard": {
+    "snaps": "Snaps",
+    "words": "Words",
+    "streak": "Streak",
+    "scanAndLearn": "Scan & Learn",
+    "recentSnaps": "Recent Snaps",
+    "seeAll": "See all"
+  },
+  "scan": {
+    "title": "Scan Image",
+    "tapToUpload": "Tap to upload an image",
+    "fileTypes": "JPG, PNG up to 10MB",
+    "analyzing": "Analyzing image…",
+    "extracting": "Extracting text & translating",
+    "complete": "Analysis Complete!",
+    "camera": "Camera",
+    "gallery": "Gallery"
+  },
+  "result": {
+    "original": "Original",
+    "translation": "Translation",
+    "grammarNotes": "Grammar Notes",
+    "vocabulary": "Vocabulary",
+    "scannedAlt": "Scanned"
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "All your scanned images"
+  },
+  "flashcards": {
+    "title": "Flashcards",
+    "wordsSaved": "{{count}} words saved",
+    "tapToFlip": "Tap to flip"
+  },
+  "profile": {
+    "role": "Language Explorer",
+    "totalSnaps": "Total Snaps",
+    "wordsLearned": "Words Learned",
+    "mastered": "Mastered",
+    "dayStreak": "Day Streak",
+    "flashcards": "Flashcards",
+    "settings": "Settings",
+    "helpSupport": "Help & Support"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "App Language",
+    "languageDesc": "Choose the interface language",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español"
+    }
+  }
+}

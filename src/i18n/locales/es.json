@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Aprende del mundo que te rodea"
+  },
+  "nav": {
+    "home": "Inicio",
+    "history": "Historial",
+    "profile": "Perfil"
+  },
+  "dashboard": {
+    "snaps": "Escaneos",
+    "words": "Palabras",
+    "streak": "Racha",
+    "scanAndLearn": "Escanear y Aprender",
+    "recentSnaps": "Escaneos recientes",
+    "seeAll": "Ver todo"
+  },
+  "scan": {
+    "title": "Escanear imagen",
+    "tapToUpload": "Toca para subir una imagen",
+    "fileTypes": "JPG, PNG hasta 10 MB",
+    "analyzing": "Analizando imagen…",
+    "extracting": "Extrayendo texto y traduciendo",
+    "complete": "¡Análisis completado!",
+    "camera": "Cámara",
+    "gallery": "Galería"
+  },
+  "result": {
+    "original": "Original",
+    "translation": "Traducción",
+    "grammarNotes": "Notas gramaticales",
+    "vocabulary": "Vocabulario",
+    "scannedAlt": "Escaneado"
+  },
+  "history": {
+    "title": "Historial",
+    "subtitle": "Todas tus imágenes escaneadas"
+  },
+  "flashcards": {
+    "title": "Tarjetas",
+    "wordsSaved": "{{count}} palabras guardadas",
+    "tapToFlip": "Toca para voltear"
+  },
+  "profile": {
+    "role": "Explorador de idiomas",
+    "totalSnaps": "Total escaneos",
+    "wordsLearned": "Palabras aprendidas",
+    "mastered": "Dominadas",
+    "dayStreak": "Días de racha",
+    "flashcards": "Tarjetas",
+    "settings": "Ajustes",
+    "helpSupport": "Ayuda"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma de la app",
+    "languageDesc": "Elige el idioma de la interfaz",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español"
+    }
+  }
+}

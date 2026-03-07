@@ -1,29 +1,35 @@
 import { Camera, BookOpen, TrendingUp, Award, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { userStats } from "@/lib/mock-data";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const stats = [
-    { icon: Camera, label: "Total Snaps", value: userStats.totalSnaps },
-    { icon: BookOpen, label: "Words Learned", value: userStats.wordsLearned },
-    { icon: Award, label: "Mastered", value: userStats.masteredWords },
-    { icon: TrendingUp, label: "Day Streak", value: userStats.streak },
+    { icon: Camera, label: t("profile.totalSnaps"), value: userStats.totalSnaps },
+    { icon: BookOpen, label: t("profile.wordsLearned"), value: userStats.wordsLearned },
+    { icon: Award, label: t("profile.mastered"), value: userStats.masteredWords },
+    { icon: TrendingUp, label: t("profile.dayStreak"), value: userStats.streak },
+  ];
+
+  const menuItems = [
+    { label: t("profile.flashcards"), action: () => navigate("/flashcards") },
+    { label: t("profile.settings"), action: () => navigate("/settings") },
+    { label: t("profile.helpSupport"), action: () => {} },
   ];
 
   return (
     <div className="min-h-screen px-5 pt-14 pb-24">
-      {/* Avatar */}
       <div className="flex flex-col items-center mb-8 animate-fade-up">
         <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-3">
           <span className="text-2xl font-bold text-primary">SC</span>
         </div>
         <h1 className="text-xl font-bold text-foreground">SS Creative</h1>
-        <p className="text-sm text-muted-foreground">Language Explorer</p>
+        <p className="text-sm text-muted-foreground">{t("profile.role")}</p>
       </div>
 
-      {/* Stats Grid */}
       <div className="grid grid-cols-2 gap-3 mb-6">
         {stats.map(({ icon: Icon, label, value }, i) => (
           <div
@@ -38,15 +44,14 @@ const ProfilePage = () => {
         ))}
       </div>
 
-      {/* Menu Items */}
       <div className="space-y-2 animate-fade-up" style={{ animationDelay: "300ms", animationFillMode: "both" }}>
-        {["Flashcards", "Settings", "Help & Support"].map((item) => (
+        {menuItems.map(({ label, action }) => (
           <button
-            key={item}
-            onClick={() => item === "Flashcards" ? navigate("/flashcards") : undefined}
+            key={label}
+            onClick={action}
             className="w-full bg-card rounded-2xl p-4 border border-border/50 flex items-center justify-between transition-all hover:shadow-sm active:scale-[0.98]"
           >
-            <span className="text-sm font-medium text-foreground">{item}</span>
+            <span className="text-sm font-medium text-foreground">{label}</span>
             <ChevronRight size={16} className="text-muted-foreground" />
           </button>
         ))}

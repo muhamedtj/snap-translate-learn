@@ -10,6 +10,7 @@ import ResultPage from "@/pages/ResultPage";
 import HistoryPage from "@/pages/HistoryPage";
 import ProfilePage from "@/pages/ProfilePage";
 import FlashcardsPage from "@/pages/FlashcardsPage";
+import SettingsPage from "@/pages/SettingsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/flashcards" element={<FlashcardsPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <BottomNav />

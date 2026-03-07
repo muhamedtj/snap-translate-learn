@@ -1,20 +1,22 @@
 import { Home, Clock, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const tabs = [
-  { path: "/", icon: Home, label: "Home" },
-  { path: "/history", icon: Clock, label: "History" },
-  { path: "/profile", icon: User, label: "Profile" },
+  { path: "/", icon: Home, labelKey: "nav.home" },
+  { path: "/history", icon: Clock, labelKey: "nav.history" },
+  { path: "/profile", icon: User, labelKey: "nav.profile" },
 ];
 
 const BottomNav = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-t border-border safe-bottom">
       <div className="flex items-center justify-around h-16 max-w-lg mx-auto">
-        {tabs.map(({ path, icon: Icon, label }) => {
+        {tabs.map(({ path, icon: Icon, labelKey }) => {
           const active = location.pathname === path;
           return (
             <button
@@ -27,7 +29,7 @@ const BottomNav = () => {
               }`}
             >
               <Icon size={22} strokeWidth={active ? 2.5 : 1.8} />
-              <span className="text-[10px] font-medium">{label}</span>
+              <span className="text-[10px] font-medium">{t(labelKey)}</span>
             </button>
           );
         })}
