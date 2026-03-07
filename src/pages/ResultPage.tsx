@@ -1,16 +1,17 @@
 import { ArrowLeft, BookmarkPlus, Share2 } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { mockSnaps } from "@/lib/mock-data";
 import FlashCard from "@/components/FlashCard";
 
 const ResultPage = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { id } = useParams();
   const snap = mockSnaps.find((s) => s.id === id) ?? mockSnaps[0];
 
   return (
     <div className="min-h-screen px-5 pt-14 pb-24">
-      {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <button
           onClick={() => navigate(-1)}
@@ -28,28 +29,24 @@ const ResultPage = () => {
         </div>
       </div>
 
-      {/* Image */}
       <img
         src={snap.imageUrl}
-        alt="Scanned"
+        alt={t("result.scannedAlt")}
         className="w-full h-48 rounded-2xl object-cover mb-5 animate-fade-up"
       />
 
-      {/* Original Text */}
       <div className="bg-card rounded-2xl p-4 border border-border/50 mb-3 animate-fade-up" style={{ animationDelay: "80ms", animationFillMode: "both" }}>
-        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Original — {snap.language}</span>
+        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">{t("result.original")} — {snap.language}</span>
         <p className="text-base font-medium text-foreground mt-1.5">{snap.originalText}</p>
       </div>
 
-      {/* Translation */}
       <div className="bg-primary/5 rounded-2xl p-4 border border-primary/10 mb-3 animate-fade-up" style={{ animationDelay: "160ms", animationFillMode: "both" }}>
-        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Translation</span>
+        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">{t("result.translation")}</span>
         <p className="text-base text-foreground mt-1.5">{snap.translation}</p>
       </div>
 
-      {/* Grammar */}
       <div className="bg-card rounded-2xl p-4 border border-border/50 mb-5 animate-fade-up" style={{ animationDelay: "240ms", animationFillMode: "both" }}>
-        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">Grammar Notes</span>
+        <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">{t("result.grammarNotes")}</span>
         <div className="mt-2 space-y-1.5">
           {snap.grammarNotes.split("\n").map((note, i) => (
             <p key={i} className="text-sm text-muted-foreground leading-relaxed">{note}</p>
@@ -57,9 +54,8 @@ const ResultPage = () => {
         </div>
       </div>
 
-      {/* Vocabulary */}
       <div className="animate-fade-up" style={{ animationDelay: "320ms", animationFillMode: "both" }}>
-        <h3 className="text-sm font-semibold text-foreground mb-3">Vocabulary</h3>
+        <h3 className="text-sm font-semibold text-foreground mb-3">{t("result.vocabulary")}</h3>
         <div className="space-y-3">
           {snap.words.map((word) => (
             <FlashCard key={word.id} word={word} />
