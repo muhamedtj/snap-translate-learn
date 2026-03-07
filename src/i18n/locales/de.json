@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Lerne von der Welt um dich herum"
+  },
+  "nav": {
+    "home": "Start",
+    "history": "Verlauf",
+    "profile": "Profil"
+  },
+  "dashboard": {
+    "snaps": "Scans",
+    "words": "Wörter",
+    "streak": "Serie",
+    "scanAndLearn": "Scannen & Lernen",
+    "recentSnaps": "Letzte Scans",
+    "seeAll": "Alle"
+  },
+  "scan": {
+    "title": "Bild scannen",
+    "tapToUpload": "Tippen zum Hochladen",
+    "fileTypes": "JPG, PNG bis 10 MB",
+    "analyzing": "Bild wird analysiert…",
+    "extracting": "Text extrahieren & übersetzen",
+    "complete": "Analyse abgeschlossen!",
+    "camera": "Kamera",
+    "gallery": "Galerie"
+  },
+  "result": {
+    "original": "Original",
+    "translation": "Übersetzung",
+    "grammarNotes": "Grammatik",
+    "vocabulary": "Vokabeln",
+    "scannedAlt": "Gescannt"
+  },
+  "history": {
+    "title": "Verlauf",
+    "subtitle": "Alle gescannten Bilder"
+  },
+  "flashcards": {
+    "title": "Lernkarten",
+    "wordsSaved": "{{count}} Wörter gespeichert",
+    "tapToFlip": "Tippen zum Umdrehen"
+  },
+  "profile": {
+    "role": "Sprachentdecker",
+    "totalSnaps": "Scans gesamt",
+    "wordsLearned": "Wörter gelernt",
+    "mastered": "Gemeistert",
+    "dayStreak": "Tage Serie",
+    "flashcards": "Lernkarten",
+    "settings": "Einstellungen",
+    "helpSupport": "Hilfe & Support"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "App-Sprache",
+    "languageDesc": "Wähle die Oberflächensprache",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español"
+    }
+  }
+}
