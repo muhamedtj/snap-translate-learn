@@ -14,41 +14,43 @@ const SettingsPage = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="min-h-screen px-5 pt-14 pb-24">
+    <div className="min-h-screen px-5 pt-12 pb-24">
       <div className="flex items-center gap-3 mb-8">
         <button
           onClick={() => navigate(-1)}
-          className="w-9 h-9 rounded-xl bg-card border border-border/50 flex items-center justify-center"
+          className="w-10 h-10 rounded-2xl bg-card border-2 border-border flex items-center justify-center"
+          style={{ borderBottomWidth: 4 }}
         >
-          <ArrowLeft size={18} />
+          <ArrowLeft size={20} />
         </button>
-        <h1 className="text-lg font-semibold text-foreground">{t("settings.title")}</h1>
+        <h1 className="text-xl font-black text-foreground">{t("settings.title")}</h1>
       </div>
 
-      <div className="bg-card rounded-2xl border border-border/50 p-4 animate-fade-up">
+      <div className="card-volumetric p-5 animate-fade-up">
         <div className="flex items-center gap-2 mb-1">
-          <Globe size={16} className="text-primary" />
-          <span className="text-sm font-semibold text-foreground">{t("settings.language")}</span>
+          <Globe size={18} className="text-primary" />
+          <span className="text-base font-bold text-foreground">{t("settings.language")}</span>
         </div>
-        <p className="text-xs text-muted-foreground mb-4">{t("settings.languageDesc")}</p>
+        <p className="text-sm font-semibold text-muted-foreground mb-4">{t("settings.languageDesc")}</p>
 
         <div className="space-y-2">
           {languages.map(({ code, flag }) => (
             <button
               key={code}
               onClick={() => i18n.changeLanguage(code)}
-              className={`w-full flex items-center gap-3 rounded-xl px-4 py-3 transition-all active:scale-[0.98] ${
+              className={`w-full flex items-center gap-3 rounded-2xl px-4 py-3.5 transition-all active:scale-[0.98] border-2 ${
                 i18n.language === code
-                  ? "bg-primary/10 border-2 border-primary"
-                  : "bg-accent/50 border-2 border-transparent hover:border-border"
+                  ? "bg-primary/10 border-primary"
+                  : "bg-muted/50 border-transparent"
               }`}
+              style={{ borderBottomWidth: 4, borderBottomColor: i18n.language === code ? "hsl(var(--primary-dark))" : "hsl(var(--border))" }}
             >
               <span className="text-xl">{flag}</span>
-              <span className="text-sm font-medium text-foreground">
+              <span className="text-sm font-bold text-foreground">
                 {t(`settings.languages.${code}`)}
               </span>
               {i18n.language === code && (
-                <span className="ml-auto text-xs font-semibold text-primary">✓</span>
+                <span className="ml-auto text-sm font-black text-primary">✓</span>
               )}
             </button>
           ))}
