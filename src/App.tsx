@@ -6,10 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BottomNav from "@/components/BottomNav";
 import Dashboard from "@/pages/Dashboard";
 import ScanPage from "@/pages/ScanPage";
-import ResultPage from "@/pages/ResultPage";
-import HistoryPage from "@/pages/HistoryPage";
+import StudyPage from "@/pages/StudyPage";
+import VocabularyPage from "@/pages/VocabularyPage";
 import ProfilePage from "@/pages/ProfilePage";
-import FlashcardsPage from "@/pages/FlashcardsPage";
+import ResultPage from "@/pages/ResultPage";
 import SettingsPage from "@/pages/SettingsPage";
 import NotFound from "./pages/NotFound";
 
@@ -25,10 +25,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/scan" element={<ScanPage />} />
-            <Route path="/result/:id" element={<ResultPage />} />
-            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/study" element={<StudyPage />} />
+            <Route path="/vocabulary" element={<VocabularyPage />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/flashcards" element={<FlashcardsPage />} />
+            <Route path="/result/:id" element={<ResultPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

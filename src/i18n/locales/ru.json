@@ -5,26 +5,42 @@
   },
   "nav": {
     "home": "Главная",
-    "history": "История",
+    "scanner": "Скан",
+    "study": "Учёба",
+    "vocabulary": "Слова",
     "profile": "Профиль"
   },
   "dashboard": {
     "snaps": "Сканы",
-    "words": "Слова",
+    "words": "слов",
     "streak": "Серия",
     "scanAndLearn": "Сканировать",
+    "startTraining": "Начать тренировку",
+    "myTopics": "Мои темы",
+    "friendsLeaderboard": "Рейтинг друзей",
     "recentSnaps": "Недавние сканы",
     "seeAll": "Все"
   },
   "scan": {
     "title": "Сканировать",
+    "pointAtObject": "Наведите на объект",
     "tapToUpload": "Нажмите, чтобы загрузить",
     "fileTypes": "JPG, PNG до 10 МБ",
-    "analyzing": "Анализ изображения…",
+    "analyzing": "Анализ с помощью ИИ...",
     "extracting": "Извлечение текста и перевод",
     "complete": "Анализ завершён!",
     "camera": "Камера",
     "gallery": "Галерея"
+  },
+  "study": {
+    "progress": "Прогресс сессии",
+    "dontKnow": "НЕ ЗНАЮ",
+    "know": "ЗНАЮ",
+    "tapToFlip": "Нажмите, чтобы перевернуть"
+  },
+  "vocabulary": {
+    "title": "Словарь",
+    "search": "Поиск слов..."
   },
   "result": {
     "original": "Оригинал",
@@ -44,12 +60,17 @@
   },
   "profile": {
     "role": "Исследователь языков",
+    "linguaMaster": "Мастер языков",
     "totalSnaps": "Всего сканов",
     "wordsLearned": "Слов изучено",
     "mastered": "Освоено",
     "dayStreak": "Дней подряд",
-    "flashcards": "Карточки",
+    "achievements": "Достижения",
     "settings": "Настройки",
+    "studyPreferences": "Режимы обучения",
+    "recentlyDeleted": "Корзина / Удалённые",
+    "changeLanguage": "Сменить язык",
+    "flashcards": "Карточки",
     "helpSupport": "Помощь"
   },
   "settings": {

@@ -5,7 +5,9 @@
   },
   "nav": {
     "home": "Start",
-    "history": "Verlauf",
+    "scanner": "Scan",
+    "study": "Lernen",
+    "vocabulary": "Wörter",
     "profile": "Profil"
   },
   "dashboard": {
@@ -13,18 +15,32 @@
     "words": "Wörter",
     "streak": "Serie",
     "scanAndLearn": "Scannen & Lernen",
+    "startTraining": "Training starten",
+    "myTopics": "Meine Themen",
+    "friendsLeaderboard": "Freunde-Ranking",
     "recentSnaps": "Letzte Scans",
     "seeAll": "Alle"
   },
   "scan": {
     "title": "Bild scannen",
+    "pointAtObject": "Auf ein Objekt richten",
     "tapToUpload": "Tippen zum Hochladen",
     "fileTypes": "JPG, PNG bis 10 MB",
-    "analyzing": "Bild wird analysiert…",
+    "analyzing": "KI-Analyse...",
     "extracting": "Text extrahieren & übersetzen",
     "complete": "Analyse abgeschlossen!",
     "camera": "Kamera",
     "gallery": "Galerie"
+  },
+  "study": {
+    "progress": "Sitzungsfortschritt",
+    "dontKnow": "WEISS NICHT",
+    "know": "ICH WEISS",
+    "tapToFlip": "Tippen zum Umdrehen"
+  },
+  "vocabulary": {
+    "title": "Vokabeln",
+    "search": "Wörter suchen..."
   },
   "result": {
     "original": "Original",
@@ -44,12 +60,17 @@
   },
   "profile": {
     "role": "Sprachentdecker",
+    "linguaMaster": "Lingua Meister",
     "totalSnaps": "Scans gesamt",
     "wordsLearned": "Wörter gelernt",
     "mastered": "Gemeistert",
     "dayStreak": "Tage Serie",
-    "flashcards": "Lernkarten",
+    "achievements": "Erfolge",
     "settings": "Einstellungen",
+    "studyPreferences": "Lernmodus-Einstellungen",
+    "recentlyDeleted": "Papierkorb / Gelöscht",
+    "changeLanguage": "Sprache ändern",
+    "flashcards": "Lernkarten",
     "helpSupport": "Hilfe & Support"
   },
   "settings": {

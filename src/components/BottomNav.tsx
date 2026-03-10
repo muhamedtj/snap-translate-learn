@@ -1,10 +1,12 @@
-import { Home, Clock, User } from "lucide-react";
+import { Home, Scan, GraduationCap, BookOpen, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const tabs = [
   { path: "/", icon: Home, labelKey: "nav.home" },
-  { path: "/history", icon: Clock, labelKey: "nav.history" },
+  { path: "/scan", icon: Scan, labelKey: "nav.scanner" },
+  { path: "/study", icon: GraduationCap, labelKey: "nav.study" },
+  { path: "/vocabulary", icon: BookOpen, labelKey: "nav.vocabulary" },
   { path: "/profile", icon: User, labelKey: "nav.profile" },
 ];
 
@@ -14,7 +16,7 @@ const BottomNav = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-xl border-t border-border safe-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t-2 border-border safe-bottom">
       <div className="flex items-center justify-around h-16 max-w-lg mx-auto">
         {tabs.map(({ path, icon: Icon, labelKey }) => {
           const active = location.pathname === path;
@@ -22,14 +24,14 @@ const BottomNav = () => {
             <button
               key={path}
               onClick={() => navigate(path)}
-              className={`flex flex-col items-center gap-1 px-6 py-2 rounded-2xl transition-all duration-200 ${
+              className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-150 ${
                 active
                   ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground"
               }`}
             >
-              <Icon size={22} strokeWidth={active ? 2.5 : 1.8} />
-              <span className="text-[10px] font-medium">{t(labelKey)}</span>
+              <Icon size={24} strokeWidth={active ? 2.8 : 2} />
+              <span className="text-[10px] font-bold">{t(labelKey)}</span>
             </button>
           );
         })}
