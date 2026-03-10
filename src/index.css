@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,47 +6,54 @@
 
 @layer base {
   :root {
-    --background: 220 20% 97%;
-    --foreground: 230 25% 10%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 234 89% 54%;
+    --primary: 239 84% 67%;
     --primary-foreground: 0 0% 100%;
+    --primary-dark: 239 84% 55%;
 
-    --secondary: 230 25% 95%;
-    --secondary-foreground: 230 25% 18%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 18%;
 
-    --muted: 220 14% 94%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 234 89% 96%;
-    --accent-foreground: 234 89% 40%;
+    --accent: 239 84% 96%;
+    --accent-foreground: 239 84% 40%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 100% 65%;
     --destructive-foreground: 0 0% 100%;
+    --destructive-dark: 0 100% 50%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 234 89% 54%;
-
-    --radius: 1rem;
-
-    --success: 152 69% 40%;
+    --success: 105 78% 40%;
     --success-foreground: 0 0% 100%;
+    --success-dark: 105 78% 30%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --warning-dark: 38 92% 40%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 239 84% 67%;
+
+    --radius: 1.25rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 234 89% 54%;
+    --sidebar-primary: 239 84% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 234 89% 96%;
-    --sidebar-accent-foreground: 234 89% 40%;
+    --sidebar-accent: 239 84% 96%;
+    --sidebar-accent-foreground: 239 84% 40%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 234 89% 54%;
+    --sidebar-ring: 239 84% 67%;
   }
 }
 
@@ -56,13 +63,50 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@layer components {
+  .btn-volumetric {
+    @apply relative font-extrabold text-lg rounded-2xl px-6 py-4 transition-all duration-100 active:translate-y-[3px] active:border-b-[3px];
+    border-bottom-width: 6px;
+  }
+
+  .btn-volumetric-primary {
+    @apply btn-volumetric text-primary-foreground;
+    background-color: hsl(var(--primary));
+    border-bottom-color: hsl(var(--primary-dark));
+  }
+
+  .btn-volumetric-success {
+    @apply btn-volumetric text-success-foreground;
+    background-color: hsl(var(--success));
+    border-bottom-color: hsl(var(--success-dark));
+  }
+
+  .btn-volumetric-destructive {
+    @apply btn-volumetric text-destructive-foreground;
+    background-color: hsl(var(--destructive));
+    border-bottom-color: hsl(var(--destructive-dark));
+  }
+
+  .btn-volumetric-warning {
+    @apply btn-volumetric text-warning-foreground;
+    background-color: hsl(var(--warning));
+    border-bottom-color: hsl(var(--warning-dark));
+  }
+
+  .card-volumetric {
+    @apply bg-card rounded-3xl border-2 border-border;
+    border-bottom-width: 4px;
   }
 }
 

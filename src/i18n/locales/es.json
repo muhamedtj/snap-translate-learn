@@ -5,26 +5,42 @@
   },
   "nav": {
     "home": "Inicio",
-    "history": "Historial",
+    "scanner": "Escanear",
+    "study": "Estudiar",
+    "vocabulary": "Palabras",
     "profile": "Perfil"
   },
   "dashboard": {
     "snaps": "Escaneos",
-    "words": "Palabras",
+    "words": "palabras",
     "streak": "Racha",
     "scanAndLearn": "Escanear y Aprender",
+    "startTraining": "Iniciar entrenamiento",
+    "myTopics": "Mis temas",
+    "friendsLeaderboard": "Ranking de amigos",
     "recentSnaps": "Escaneos recientes",
     "seeAll": "Ver todo"
   },
   "scan": {
     "title": "Escanear imagen",
+    "pointAtObject": "Apunta al objeto",
     "tapToUpload": "Toca para subir una imagen",
     "fileTypes": "JPG, PNG hasta 10 MB",
-    "analyzing": "Analizando imagen…",
+    "analyzing": "Analizando con IA...",
     "extracting": "Extrayendo texto y traduciendo",
     "complete": "¡Análisis completado!",
     "camera": "Cámara",
     "gallery": "Galería"
+  },
+  "study": {
+    "progress": "Progreso de sesión",
+    "dontKnow": "NO SÉ",
+    "know": "LO SÉ",
+    "tapToFlip": "Toca para voltear"
+  },
+  "vocabulary": {
+    "title": "Vocabulario",
+    "search": "Buscar palabras..."
   },
   "result": {
     "original": "Original",
@@ -44,12 +60,17 @@
   },
   "profile": {
     "role": "Explorador de idiomas",
+    "linguaMaster": "Maestro Lingua",
     "totalSnaps": "Total escaneos",
     "wordsLearned": "Palabras aprendidas",
     "mastered": "Dominadas",
     "dayStreak": "Días de racha",
-    "flashcards": "Tarjetas",
+    "achievements": "Logros",
     "settings": "Ajustes",
+    "studyPreferences": "Preferencias de estudio",
+    "recentlyDeleted": "Papelera / Eliminados",
+    "changeLanguage": "Cambiar idioma",
+    "flashcards": "Tarjetas",
     "helpSupport": "Ayuda"
   },
   "settings": {

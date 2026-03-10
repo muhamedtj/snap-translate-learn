@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, Upload, Camera, Loader2, Check } from "lucide-react";
+import { Image, Loader2, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -10,7 +10,7 @@ const ScanPage = () => {
   const { t } = useTranslation();
   const [state, setState] = useState<ScanState>("idle");
 
-  const handleUpload = () => {
+  const handleCapture = () => {
     setState("processing");
     setTimeout(() => {
       setState("done");
@@ -19,72 +19,56 @@ const ScanPage = () => {
   };
 
   return (
-    <div className="min-h-screen px-5 pt-14 pb-24">
-      <div className="flex items-center gap-3 mb-8">
-        <button
-          onClick={() => navigate(-1)}
-          className="w-9 h-9 rounded-xl bg-card border border-border/50 flex items-center justify-center"
-        >
-          <ArrowLeft size={18} />
-        </button>
-        <h1 className="text-lg font-semibold text-foreground">{t("scan.title")}</h1>
-      </div>
-
-      <div className="animate-fade-up">
+    <div className="min-h-screen bg-foreground flex flex-col items-center justify-between pb-24 pt-16 relative">
+      {/* Viewfinder */}
+      <div className="flex-1 flex items-center justify-center w-full px-8">
         {state === "idle" && (
-          <button
-            onClick={handleUpload}
-            className="w-full aspect-[4/3] rounded-3xl border-2 border-dashed border-primary/30 bg-accent/50 flex flex-col items-center justify-center gap-4 transition-all hover:border-primary/50 hover:bg-accent active:scale-[0.98]"
-          >
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <Upload size={28} className="text-primary" />
-            </div>
-            <div className="text-center">
-              <p className="text-sm font-medium text-foreground">{t("scan.tapToUpload")}</p>
-              <p className="text-xs text-muted-foreground mt-1">{t("scan.fileTypes")}</p>
-            </div>
-          </button>
+          <div className="w-full aspect-square rounded-3xl border-4 border-dashed border-primary-foreground/40 flex items-center justify-center">
+            <p className="text-primary-foreground/60 text-lg font-bold text-center px-4">
+              {t("scan.pointAtObject")}
+            </p>
+          </div>
         )}
 
         {state === "processing" && (
-          <div className="w-full aspect-[4/3] rounded-3xl bg-card border border-border/50 flex flex-col items-center justify-center gap-5">
-            <Loader2 size={40} className="text-primary animate-spin" />
-            <div className="text-center">
-              <p className="text-sm font-medium text-foreground">{t("scan.analyzing")}</p>
-              <p className="text-xs text-muted-foreground mt-1">{t("scan.extracting")}</p>
-            </div>
-            <div className="w-48 h-2 rounded-full overflow-hidden">
+          <div className="flex flex-col items-center gap-5">
+            <Loader2 size={56} className="text-primary-foreground animate-spin" />
+            <p className="text-primary-foreground font-bold text-lg">{t("scan.analyzing")}</p>
+            <p className="text-primary-foreground/60 text-sm font-semibold">{t("scan.extracting")}</p>
+            <div className="w-48 h-3 rounded-full overflow-hidden bg-primary-foreground/20">
               <div className="h-full animate-shimmer rounded-full" />
             </div>
           </div>
         )}
 
         {state === "done" && (
-          <div className="w-full aspect-[4/3] rounded-3xl bg-card border border-border/50 flex flex-col items-center justify-center gap-4 animate-scale-in">
-            <div className="w-16 h-16 rounded-full bg-success flex items-center justify-center">
-              <Check size={32} className="text-success-foreground" />
+          <div className="flex flex-col items-center gap-4 animate-bounce-in">
+            <div className="w-20 h-20 rounded-full bg-success flex items-center justify-center" style={{ borderBottomWidth: 6, borderBottomColor: "hsl(var(--success-dark))" }}>
+              <Check size={40} className="text-success-foreground" />
             </div>
-            <p className="text-sm font-medium text-foreground">{t("scan.complete")}</p>
+            <p className="text-primary-foreground font-bold text-lg">{t("scan.complete")}</p>
           </div>
         )}
       </div>
 
+      {/* Bottom controls */}
       {state === "idle" && (
-        <div className="mt-6 flex gap-3 animate-fade-up" style={{ animationDelay: "100ms", animationFillMode: "both" }}>
+        <div className="flex items-center justify-center gap-8 pb-4">
           <button
-            onClick={handleUpload}
-            className="flex-1 bg-card rounded-2xl p-4 border border-border/50 flex flex-col items-center gap-2 transition-all hover:shadow-sm active:scale-[0.98]"
+            onClick={handleCapture}
+            className="w-10 h-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center"
           >
-            <Camera size={20} className="text-primary" />
-            <span className="text-xs font-medium text-foreground">{t("scan.camera")}</span>
+            <Image size={22} className="text-primary-foreground" />
           </button>
+
           <button
-            onClick={handleUpload}
-            className="flex-1 bg-card rounded-2xl p-4 border border-border/50 flex flex-col items-center gap-2 transition-all hover:shadow-sm active:scale-[0.98]"
+            onClick={handleCapture}
+            className="w-20 h-20 rounded-full bg-primary-foreground flex items-center justify-center border-4 border-primary-foreground/50 active:scale-95 transition-transform"
           >
-            <Upload size={20} className="text-primary" />
-            <span className="text-xs font-medium text-foreground">{t("scan.gallery")}</span>
+            <div className="w-16 h-16 rounded-full border-4 border-foreground/20" />
           </button>
+
+          <div className="w-10 h-10" /> {/* spacer */}
         </div>
       )}
     </div>

@@ -5,26 +5,42 @@
   },
   "nav": {
     "home": "Home",
-    "history": "History",
+    "scanner": "Scan",
+    "study": "Study",
+    "vocabulary": "Words",
     "profile": "Profile"
   },
   "dashboard": {
     "snaps": "Snaps",
-    "words": "Words",
+    "words": "words",
     "streak": "Streak",
     "scanAndLearn": "Scan & Learn",
+    "startTraining": "Start Daily Training",
+    "myTopics": "My Topics",
+    "friendsLeaderboard": "Friends Leaderboard",
     "recentSnaps": "Recent Snaps",
     "seeAll": "See all"
   },
   "scan": {
     "title": "Scan Image",
+    "pointAtObject": "Point at an object",
     "tapToUpload": "Tap to upload an image",
     "fileTypes": "JPG, PNG up to 10MB",
-    "analyzing": "Analyzing image…",
+    "analyzing": "Analyzing with AI...",
     "extracting": "Extracting text & translating",
     "complete": "Analysis Complete!",
     "camera": "Camera",
     "gallery": "Gallery"
+  },
+  "study": {
+    "progress": "Session Progress",
+    "dontKnow": "I DON'T KNOW",
+    "know": "I KNOW",
+    "tapToFlip": "Tap to flip"
+  },
+  "vocabulary": {
+    "title": "Vocabulary",
+    "search": "Search words..."
   },
   "result": {
     "original": "Original",
@@ -44,12 +60,17 @@
   },
   "profile": {
     "role": "Language Explorer",
+    "linguaMaster": "Lingua Master",
     "totalSnaps": "Total Snaps",
     "wordsLearned": "Words Learned",
     "mastered": "Mastered",
     "dayStreak": "Day Streak",
-    "flashcards": "Flashcards",
+    "achievements": "Achievements",
     "settings": "Settings",
+    "studyPreferences": "Study Mode Preferences",
+    "recentlyDeleted": "Trash / Recently Deleted",
+    "changeLanguage": "Change App Language",
+    "flashcards": "Flashcards",
     "helpSupport": "Help & Support"
   },
   "settings": {
