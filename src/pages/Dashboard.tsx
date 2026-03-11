@@ -48,10 +48,11 @@ const Dashboard = () => {
         <h2 className="text-lg font-extrabold text-foreground mb-3">{t("dashboard.myTopics")}</h2>
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
           {topics.map((topic) => (
-            <div
-              key={topic.id}
-              className="card-volumetric min-w-[160px] p-4 flex-shrink-0 relative"
-            >
+              <div
+                key={topic.id}
+                onClick={() => navigate(`/study?topic=${topic.id}`)}
+                className="card-volumetric min-w-[160px] p-4 flex-shrink-0 relative cursor-pointer active:scale-[0.97] transition-transform"
+              >
               <button className="absolute top-2 right-2 w-7 h-7 rounded-xl bg-destructive/10 flex items-center justify-center">
                 <Trash2 size={14} className="text-destructive" />
               </button>

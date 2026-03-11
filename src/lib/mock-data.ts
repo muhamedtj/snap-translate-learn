@@ -6,6 +6,7 @@ export interface VocabWord {
   example: string;
   mastered: boolean;
   srsLevel: number; // 0-5
+  topicId: string;
 }
 
 export interface Snap {
@@ -34,6 +35,15 @@ export interface Friend {
   xp: number;
 }
 
+export type StudyMode = "flashcards" | "audio" | "multipleChoice" | "writeTranslation";
+
+export const studyModes: { id: StudyMode; emoji: string; labelKey: string }[] = [
+  { id: "flashcards", emoji: "🃏", labelKey: "study.modes.flashcards" },
+  { id: "audio", emoji: "🔊", labelKey: "study.modes.audio" },
+  { id: "multipleChoice", emoji: "✅", labelKey: "study.modes.multipleChoice" },
+  { id: "writeTranslation", emoji: "✍️", labelKey: "study.modes.writeTranslation" },
+];
+
 export const topics: Topic[] = [
   { id: "t1", name: "Fruit Vocabulary", emoji: "🍎", wordCount: 12, language: "French" },
   { id: "t2", name: "Kitchen", emoji: "🍳", wordCount: 8, language: "German" },
@@ -58,8 +68,8 @@ export const mockSnaps: Snap[] = [
     grammarNotes: "• \"Bonjour\" is a formal greeting used during the day.\n• \"Comment allez-vous\" uses the formal \"vous\" form.\n• \"Aujourd'hui\" means \"today\" — it's an adverb of time.",
     createdAt: "2026-03-05",
     words: [
-      { id: "w1", word: "Bonjour", translation: "Hello", language: "French", example: "Bonjour, je suis Pierre.", mastered: true, srsLevel: 5 },
-      { id: "w2", word: "Aujourd'hui", translation: "Today", language: "French", example: "Aujourd'hui il fait beau.", mastered: false, srsLevel: 2 },
+      { id: "w1", word: "Bonjour", translation: "Hello", language: "French", example: "Bonjour, je suis Pierre.", mastered: true, srsLevel: 5, topicId: "t1" },
+      { id: "w2", word: "Aujourd'hui", translation: "Today", language: "French", example: "Aujourd'hui il fait beau.", mastered: false, srsLevel: 2, topicId: "t1" },
     ],
   },
   {
@@ -71,8 +81,8 @@ export const mockSnaps: Snap[] = [
     grammarNotes: "• \"Die Katze\" — feminine noun with definite article.\n• \"sitzt\" — 3rd person singular of \"sitzen\".\n• \"auf dem Tisch\" — dative case after \"auf\" (location).",
     createdAt: "2026-03-04",
     words: [
-      { id: "w3", word: "Katze", translation: "Cat", language: "German", example: "Die Katze schläft.", mastered: false, srsLevel: 1 },
-      { id: "w4", word: "Tisch", translation: "Table", language: "German", example: "Der Tisch ist groß.", mastered: true, srsLevel: 4 },
+      { id: "w3", word: "Katze", translation: "Cat", language: "German", example: "Die Katze schläft.", mastered: false, srsLevel: 1, topicId: "t2" },
+      { id: "w4", word: "Tisch", translation: "Table", language: "German", example: "Der Tisch ist groß.", mastered: true, srsLevel: 4, topicId: "t2" },
     ],
   },
   {
@@ -84,13 +94,15 @@ export const mockSnaps: Snap[] = [
     grammarNotes: "• \"東京\" (Tōkyō) — proper noun.\n• \"美しい\" (utsukushii) — i-adjective meaning beautiful.\n• \"都市\" (toshi) — noun meaning city.\n• \"です\" (desu) — polite copula.",
     createdAt: "2026-03-03",
     words: [
-      { id: "w5", word: "美しい", translation: "Beautiful", language: "Japanese", example: "美しい花です。", mastered: false, srsLevel: 0 },
-      { id: "w6", word: "都市", translation: "City", language: "Japanese", example: "大きい都市です。", mastered: false, srsLevel: 3 },
+      { id: "w5", word: "美しい", translation: "Beautiful", language: "Japanese", example: "美しい花です。", mastered: false, srsLevel: 0, topicId: "t4" },
+      { id: "w6", word: "都市", translation: "City", language: "Japanese", example: "大きい都市です。", mastered: false, srsLevel: 3, topicId: "t4" },
     ],
   },
 ];
 
 export const allVocabWords: VocabWord[] = mockSnaps.flatMap((s) => s.words);
+
+export const availableLanguages = [...new Set(allVocabWords.map((w) => w.language))];
 
 export const userStats = {
   totalSnaps: 24,

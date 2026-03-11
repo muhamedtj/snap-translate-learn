@@ -33,14 +33,34 @@
     "gallery": "Gallery"
   },
   "study": {
+    "title": "Study",
     "progress": "Session Progress",
     "dontKnow": "I DON'T KNOW",
     "know": "I KNOW",
-    "tapToFlip": "Tap to flip"
+    "tapToFlip": "Tap to flip",
+    "settings": "Settings",
+    "filterByLanguage": "Filter by language",
+    "studyModes": "Study modes",
+    "apply": "Apply",
+    "noWords": "No words to study",
+    "next": "Next",
+    "check": "Check",
+    "listenAndTranslate": "Listen and guess the word",
+    "chooseTranslation": "Choose the correct translation",
+    "writeTranslation": "Write the translation",
+    "typePlaceholder": "Type translation...",
+    "correctAnswer": "Correct answer",
+    "modes": {
+      "flashcards": "Flashcards",
+      "audio": "Audio",
+      "multipleChoice": "Choose answer",
+      "writeTranslation": "Write translation"
+    }
   },
   "vocabulary": {
-    "title": "Vocabulary",
-    "search": "Search words..."
+    "title": "Topics",
+    "search": "Search words...",
+    "searchTopics": "Search topics..."
   },
   "result": {
     "original": "Original",
