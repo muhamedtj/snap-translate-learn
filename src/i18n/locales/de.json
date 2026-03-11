@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "SnapLingo",
-    "tagline": "Lerne von der Welt um dich herum"
+    "tagline": "Lerne aus der Welt um dich herum"
   },
   "nav": {
     "home": "Start",
@@ -17,7 +17,7 @@
     "scanAndLearn": "Scannen & Lernen",
     "startTraining": "Training starten",
     "myTopics": "Meine Themen",
-    "friendsLeaderboard": "Freunde-Ranking",
+    "friendsLeaderboard": "Freunde-Rangliste",
     "recentSnaps": "Letzte Scans",
     "seeAll": "Alle"
   },
@@ -33,20 +33,40 @@
     "gallery": "Galerie"
   },
   "study": {
+    "title": "Lernen",
     "progress": "Sitzungsfortschritt",
     "dontKnow": "WEISS NICHT",
-    "know": "ICH WEISS",
-    "tapToFlip": "Tippen zum Umdrehen"
+    "know": "WEISS ICH",
+    "tapToFlip": "Tippen zum Umdrehen",
+    "settings": "Einstellungen",
+    "filterByLanguage": "Nach Sprache filtern",
+    "studyModes": "Lernmodi",
+    "apply": "Anwenden",
+    "noWords": "Keine Wörter zum Lernen",
+    "next": "Weiter",
+    "check": "Prüfen",
+    "listenAndTranslate": "Höre zu und errate das Wort",
+    "chooseTranslation": "Wähle die richtige Übersetzung",
+    "writeTranslation": "Schreibe die Übersetzung",
+    "typePlaceholder": "Übersetzung eingeben...",
+    "correctAnswer": "Richtige Antwort",
+    "modes": {
+      "flashcards": "Karteikarten",
+      "audio": "Audio",
+      "multipleChoice": "Antwort wählen",
+      "writeTranslation": "Übersetzung schreiben"
+    }
   },
   "vocabulary": {
-    "title": "Vokabeln",
-    "search": "Wörter suchen..."
+    "title": "Themen",
+    "search": "Wörter suchen...",
+    "searchTopics": "Themen suchen..."
   },
   "result": {
     "original": "Original",
     "translation": "Übersetzung",
     "grammarNotes": "Grammatik",
-    "vocabulary": "Vokabeln",
+    "vocabulary": "Wortschatz",
     "scannedAlt": "Gescannt"
   },
   "history": {
@@ -54,23 +74,23 @@
     "subtitle": "Alle gescannten Bilder"
   },
   "flashcards": {
-    "title": "Lernkarten",
+    "title": "Karteikarten",
     "wordsSaved": "{{count}} Wörter gespeichert",
     "tapToFlip": "Tippen zum Umdrehen"
   },
   "profile": {
     "role": "Sprachentdecker",
-    "linguaMaster": "Lingua Meister",
+    "linguaMaster": "Sprachmeister",
     "totalSnaps": "Scans gesamt",
     "wordsLearned": "Wörter gelernt",
     "mastered": "Gemeistert",
-    "dayStreak": "Tage Serie",
+    "dayStreak": "Tage-Serie",
     "achievements": "Erfolge",
     "settings": "Einstellungen",
-    "studyPreferences": "Lernmodus-Einstellungen",
-    "recentlyDeleted": "Papierkorb / Gelöscht",
+    "studyPreferences": "Lerneinstellungen",
+    "recentlyDeleted": "Papierkorb",
     "changeLanguage": "Sprache ändern",
-    "flashcards": "Lernkarten",
+    "flashcards": "Karteikarten",
     "helpSupport": "Hilfe & Support"
   },
   "settings": {

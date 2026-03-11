@@ -6,7 +6,7 @@
   "nav": {
     "home": "Inicio",
     "scanner": "Escanear",
-    "study": "Estudiar",
+    "study": "Estudio",
     "vocabulary": "Palabras",
     "profile": "Perfil"
   },
@@ -14,38 +14,58 @@
     "snaps": "Escaneos",
     "words": "palabras",
     "streak": "Racha",
-    "scanAndLearn": "Escanear y Aprender",
+    "scanAndLearn": "Escanear y aprender",
     "startTraining": "Iniciar entrenamiento",
     "myTopics": "Mis temas",
     "friendsLeaderboard": "Ranking de amigos",
     "recentSnaps": "Escaneos recientes",
-    "seeAll": "Ver todo"
+    "seeAll": "Ver todos"
   },
   "scan": {
     "title": "Escanear imagen",
-    "pointAtObject": "Apunta al objeto",
+    "pointAtObject": "Apunta a un objeto",
     "tapToUpload": "Toca para subir una imagen",
     "fileTypes": "JPG, PNG hasta 10 MB",
     "analyzing": "Analizando con IA...",
     "extracting": "Extrayendo texto y traduciendo",
-    "complete": "¡Análisis completado!",
+    "complete": "¡Análisis completo!",
     "camera": "Cámara",
     "gallery": "Galería"
   },
   "study": {
+    "title": "Estudio",
     "progress": "Progreso de sesión",
     "dontKnow": "NO SÉ",
     "know": "LO SÉ",
-    "tapToFlip": "Toca para voltear"
+    "tapToFlip": "Toca para voltear",
+    "settings": "Configuración",
+    "filterByLanguage": "Filtrar por idioma",
+    "studyModes": "Modos de estudio",
+    "apply": "Aplicar",
+    "noWords": "No hay palabras para estudiar",
+    "next": "Siguiente",
+    "check": "Comprobar",
+    "listenAndTranslate": "Escucha y adivina la palabra",
+    "chooseTranslation": "Elige la traducción correcta",
+    "writeTranslation": "Escribe la traducción",
+    "typePlaceholder": "Escribe la traducción...",
+    "correctAnswer": "Respuesta correcta",
+    "modes": {
+      "flashcards": "Tarjetas",
+      "audio": "Audio",
+      "multipleChoice": "Elegir respuesta",
+      "writeTranslation": "Escribir traducción"
+    }
   },
   "vocabulary": {
-    "title": "Vocabulario",
-    "search": "Buscar palabras..."
+    "title": "Temas",
+    "search": "Buscar palabras...",
+    "searchTopics": "Buscar temas..."
   },
   "result": {
     "original": "Original",
     "translation": "Traducción",
-    "grammarNotes": "Notas gramaticales",
+    "grammarNotes": "Gramática",
     "vocabulary": "Vocabulario",
     "scannedAlt": "Escaneado"
   },
@@ -61,20 +81,20 @@
   "profile": {
     "role": "Explorador de idiomas",
     "linguaMaster": "Maestro Lingua",
-    "totalSnaps": "Total escaneos",
+    "totalSnaps": "Total de escaneos",
     "wordsLearned": "Palabras aprendidas",
     "mastered": "Dominadas",
-    "dayStreak": "Días de racha",
+    "dayStreak": "Días seguidos",
     "achievements": "Logros",
-    "settings": "Ajustes",
+    "settings": "Configuración",
     "studyPreferences": "Preferencias de estudio",
-    "recentlyDeleted": "Papelera / Eliminados",
+    "recentlyDeleted": "Papelera",
     "changeLanguage": "Cambiar idioma",
     "flashcards": "Tarjetas",
-    "helpSupport": "Ayuda"
+    "helpSupport": "Ayuda y soporte"
   },
   "settings": {
-    "title": "Ajustes",
+    "title": "Configuración",
     "language": "Idioma de la app",
     "languageDesc": "Elige el idioma de la interfaz",
     "languages": {
