@@ -33,14 +33,34 @@
     "gallery": "Галерея"
   },
   "study": {
+    "title": "Учёба",
     "progress": "Прогресс сессии",
     "dontKnow": "НЕ ЗНАЮ",
     "know": "ЗНАЮ",
-    "tapToFlip": "Нажмите, чтобы перевернуть"
+    "tapToFlip": "Нажмите, чтобы перевернуть",
+    "settings": "Настройки",
+    "filterByLanguage": "Фильтр по языку",
+    "studyModes": "Режимы обучения",
+    "apply": "Применить",
+    "noWords": "Нет слов для изучения",
+    "next": "Далее",
+    "check": "Проверить",
+    "listenAndTranslate": "Послушай и угадай слово",
+    "chooseTranslation": "Выберите правильный перевод",
+    "writeTranslation": "Напишите перевод",
+    "typePlaceholder": "Введите перевод...",
+    "correctAnswer": "Правильный ответ",
+    "modes": {
+      "flashcards": "Карточки",
+      "audio": "Аудио",
+      "multipleChoice": "Выбор ответа",
+      "writeTranslation": "Написать перевод"
+    }
   },
   "vocabulary": {
-    "title": "Словарь",
-    "search": "Поиск слов..."
+    "title": "Темы",
+    "search": "Поиск слов...",
+    "searchTopics": "Поиск тем..."
   },
   "result": {
     "original": "Оригинал",
