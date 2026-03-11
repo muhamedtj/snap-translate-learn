@@ -1,19 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Volume2, Settings2, X, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 import { allVocabWords, availableLanguages, studyModes, type StudyMode } from "@/lib/mock-data";
+
+const STORAGE_KEY = "snaplingo-study-settings";
+
+function loadSettings(): { languages: string[]; modes: StudyMode[] } {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch {}
+  return { languages: availableLanguages, modes: ["flashcards"] };
+}
+
+function saveSettings(languages: string[], modes: StudyMode[]) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ languages, modes }));
+}
 
 const StudyPage = () => {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const topicId = searchParams.get("topic");
 
-  // Settings panel
+  const saved = useMemo(() => loadSettings(), []);
+
   const [showSettings, setShowSettings] = useState(false);
-  const [selectedLanguages, setSelectedLanguages] = useState<string[]>(availableLanguages);
-  const [selectedModes, setSelectedModes] = useState<StudyMode[]>(["flashcards"]);
-  const [activeMode, setActiveMode] = useState<StudyMode>("flashcards");
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>(saved.languages);
+  const [selectedModes, setSelectedModes] = useState<StudyMode[]>(saved.modes);
 
   // Study state
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,8 +36,18 @@ const StudyPage = () => {
   const [mcAnswer, setMcAnswer] = useState<string | null>(null);
   const [writeInput, setWriteInput] = useState("");
   const [writeResult, setWriteResult] = useState<"correct" | "wrong" | null>(null);
+  const [mcOptions, setMcOptions] = useState<string[]>([]);
 
-  // Filter words
+  // Persist settings
+  useEffect(() => {
+    saveSettings(selectedLanguages, selectedModes);
+  }, [selectedLanguages, selectedModes]);
+
+  // Pick random mode from selected modes each round
+  const [activeMode, setActiveMode] = useState<StudyMode>(() =>
+    saved.modes[Math.floor(Math.random() * saved.modes.length)]
+  );
+
   const words = allVocabWords.filter((w) => {
     if (topicId && w.topicId !== topicId) return false;
     if (!selectedLanguages.includes(w.language)) return false;
@@ -33,6 +57,18 @@ const StudyPage = () => {
   const total = words.length;
   const word = words[currentIndex % Math.max(total, 1)];
   const progress = total > 0 ? Math.round((answered / total) * 100) : 0;
+
+  // Generate MC options when word changes
+  useEffect(() => {
+    if (!word) return;
+    const correct = word.translation;
+    const others = allVocabWords
+      .filter((w) => w.id !== word.id)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3)
+      .map((w) => w.translation);
+    setMcOptions([correct, ...others].sort(() => Math.random() - 0.5));
+  }, [word?.id]);
 
   const toggleLanguage = (lang: string) => {
     setSelectedLanguages((prev) =>
@@ -49,39 +85,16 @@ const StudyPage = () => {
     });
   };
 
-  const advance = () => {
+  const advance = useCallback(() => {
     setAnswered((a) => a + 1);
     setCurrentIndex((i) => (i + 1) % Math.max(total, 1));
     setFlipped(false);
     setMcAnswer(null);
     setWriteInput("");
     setWriteResult(null);
-  };
-
-  // Multiple choice options
-  const getMcOptions = () => {
-    if (!word) return [];
-    const correct = word.translation;
-    const others = allVocabWords
-      .filter((w) => w.id !== word.id)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3)
-      .map((w) => w.translation);
-    return [correct, ...others].sort(() => Math.random() - 0.5);
-  };
-
-  const [mcOptions] = useState<string[]>(() => getMcOptions());
-  // Regenerate on index change
-  const currentMcOptions = (() => {
-    if (!word) return [];
-    const correct = word.translation;
-    const others = allVocabWords
-      .filter((w) => w.id !== word.id)
-      .sort(() => 0.5 - Math.random())
-      .slice(0, 3)
-      .map((w) => w.translation);
-    return [correct, ...others].sort(() => 0.5 - Math.random());
-  })();
+    // Pick random mode from selected
+    setActiveMode(selectedModes[Math.floor(Math.random() * selectedModes.length)]);
+  }, [total, selectedModes]);
 
   const srsDots = word ? Array.from({ length: 3 }, (_, i) => i < word.srsLevel % 4) : [];
 
@@ -101,10 +114,7 @@ const StudyPage = () => {
   function renderSettings() {
     return (
       <div className="fixed inset-0 z-50 bg-foreground/50 flex items-end justify-center" onClick={() => setShowSettings(false)}>
-        <div
-          className="bg-card w-full max-w-lg rounded-t-3xl p-6 pb-10 animate-fade-up"
-          onClick={(e) => e.stopPropagation()}
-        >
+        <div className="bg-card w-full max-w-lg rounded-t-3xl p-6 pb-10 animate-fade-up" onClick={(e) => e.stopPropagation()}>
           <div className="flex items-center justify-between mb-5">
             <h2 className="text-lg font-black text-foreground">{t("study.settings")}</h2>
             <button onClick={() => setShowSettings(false)} className="w-8 h-8 rounded-xl bg-muted flex items-center justify-center">
@@ -112,7 +122,6 @@ const StudyPage = () => {
             </button>
           </div>
 
-          {/* Language filter */}
           <p className="text-sm font-bold text-muted-foreground mb-2">{t("study.filterByLanguage")}</p>
           <div className="flex flex-wrap gap-2 mb-5">
             {availableLanguages.map((lang) => (
@@ -126,9 +135,7 @@ const StudyPage = () => {
                 }`}
                 style={{
                   borderBottomWidth: 4,
-                  borderBottomColor: selectedLanguages.includes(lang)
-                    ? "hsl(var(--primary-dark))"
-                    : "hsl(var(--border))",
+                  borderBottomColor: selectedLanguages.includes(lang) ? "hsl(var(--primary-dark))" : "hsl(var(--border))",
                 }}
               >
                 {lang}
@@ -136,7 +143,6 @@ const StudyPage = () => {
             ))}
           </div>
 
-          {/* Study modes */}
           <p className="text-sm font-bold text-muted-foreground mb-2">{t("study.studyModes")}</p>
           <div className="space-y-2">
             {studyModes.map((mode) => (
@@ -150,25 +156,18 @@ const StudyPage = () => {
                 }`}
                 style={{
                   borderBottomWidth: 4,
-                  borderBottomColor: selectedModes.includes(mode.id)
-                    ? "hsl(var(--primary-dark))"
-                    : "hsl(var(--border))",
+                  borderBottomColor: selectedModes.includes(mode.id) ? "hsl(var(--primary-dark))" : "hsl(var(--border))",
                 }}
               >
                 <span className="text-xl">{mode.emoji}</span>
                 <span>{t(mode.labelKey)}</span>
-                {selectedModes.includes(mode.id) && (
-                  <Check size={16} className="ml-auto text-primary" />
-                )}
+                {selectedModes.includes(mode.id) && <Check size={16} className="ml-auto text-primary" />}
               </button>
             ))}
           </div>
 
           <button
-            onClick={() => {
-              setShowSettings(false);
-              if (selectedModes.length > 0) setActiveMode(selectedModes[0]);
-            }}
+            onClick={() => setShowSettings(false)}
             className="btn-volumetric-primary w-full mt-5 text-base"
           >
             {t("study.apply")}
@@ -178,7 +177,6 @@ const StudyPage = () => {
     );
   }
 
-  // Render active study mode
   function renderFlashcard() {
     return (
       <>
@@ -207,8 +205,8 @@ const StudyPage = () => {
           </div>
         </div>
         <div className="flex gap-3 mt-6">
-          <button onClick={() => advance()} className="btn-volumetric-destructive flex-1 text-base">{t("study.dontKnow")}</button>
-          <button onClick={() => advance()} className="btn-volumetric-success flex-1 text-base">{t("study.know")}</button>
+          <button onClick={advance} className="btn-volumetric-destructive flex-1 text-base">{t("study.dontKnow")}</button>
+          <button onClick={advance} className="btn-volumetric-success flex-1 text-base">{t("study.know")}</button>
         </div>
       </>
     );
@@ -227,8 +225,8 @@ const StudyPage = () => {
           </div>
         </div>
         <div className="flex gap-3 mt-6">
-          <button onClick={() => advance()} className="btn-volumetric-destructive flex-1 text-base">{t("study.dontKnow")}</button>
-          <button onClick={() => advance()} className="btn-volumetric-success flex-1 text-base">{t("study.know")}</button>
+          <button onClick={advance} className="btn-volumetric-destructive flex-1 text-base">{t("study.dontKnow")}</button>
+          <button onClick={advance} className="btn-volumetric-success flex-1 text-base">{t("study.know")}</button>
         </div>
       </>
     );
@@ -243,7 +241,7 @@ const StudyPage = () => {
             <span className="text-sm font-semibold text-muted-foreground">{t("study.chooseTranslation")}</span>
           </div>
           <div className="w-full max-w-[320px] space-y-2">
-            {currentMcOptions.map((option, i) => {
+            {mcOptions.map((option, i) => {
               const isCorrect = option === word.translation;
               const isSelected = mcAnswer === option;
               let style = "bg-muted/50 border-transparent text-foreground";
@@ -255,9 +253,7 @@ const StudyPage = () => {
               return (
                 <button
                   key={i}
-                  onClick={() => {
-                    if (!mcAnswer) setMcAnswer(option);
-                  }}
+                  onClick={() => { if (!mcAnswer) setMcAnswer(option); }}
                   className={`w-full px-4 py-3.5 rounded-2xl text-sm font-bold border-2 transition-all ${style}`}
                   style={{ borderBottomWidth: 4, borderBottomColor: mcAnswer && isCorrect ? "hsl(var(--success-dark))" : "hsl(var(--border))" }}
                 >
@@ -268,7 +264,7 @@ const StudyPage = () => {
           </div>
         </div>
         {mcAnswer && (
-          <button onClick={() => advance()} className="btn-volumetric-primary w-full mt-4 text-base">
+          <button onClick={advance} className="btn-volumetric-primary w-full mt-4 text-base">
             {t("study.next")}
           </button>
         )}
@@ -321,7 +317,7 @@ const StudyPage = () => {
             {t("study.check")}
           </button>
         ) : (
-          <button onClick={() => advance()} className="btn-volumetric-primary w-full mt-4 text-base">
+          <button onClick={advance} className="btn-volumetric-primary w-full mt-4 text-base">
             {t("study.next")}
           </button>
         )}
@@ -336,42 +332,26 @@ const StudyPage = () => {
     writeTranslation: renderWriteTranslation,
   };
 
+  const currentModeData = studyModes.find((m) => m.id === activeMode)!;
+
   return (
     <div className="min-h-screen flex flex-col pb-24 pt-12 px-5">
-      {/* Header */}
       <div className="flex items-center justify-between mb-2">
         <h1 className="text-xl font-black text-foreground">{t("study.title")}</h1>
-        <button
-          onClick={() => setShowSettings(true)}
-          className="w-10 h-10 rounded-2xl bg-card border-2 border-border flex items-center justify-center"
-          style={{ borderBottomWidth: 4 }}
-        >
-          <Settings2 size={20} className="text-primary" />
-        </button>
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-bold text-muted-foreground">
+            {currentModeData.emoji} {t(currentModeData.labelKey)}
+          </span>
+          <button
+            onClick={() => setShowSettings(true)}
+            className="w-10 h-10 rounded-2xl bg-card border-2 border-border flex items-center justify-center"
+            style={{ borderBottomWidth: 4 }}
+          >
+            <Settings2 size={20} className="text-primary" />
+          </button>
+        </div>
       </div>
 
-      {/* Mode tabs */}
-      <div className="flex gap-2 mb-4 overflow-x-auto pb-1 scrollbar-hide">
-        {selectedModes.map((mode) => {
-          const modeData = studyModes.find((m) => m.id === mode)!;
-          return (
-            <button
-              key={mode}
-              onClick={() => { setActiveMode(mode); setCurrentIndex(0); setAnswered(0); setFlipped(false); setMcAnswer(null); setWriteInput(""); setWriteResult(null); }}
-              className={`px-4 py-2 rounded-2xl text-sm font-bold whitespace-nowrap transition-all border-2 ${
-                activeMode === mode
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-muted/50 text-muted-foreground border-transparent"
-              }`}
-              style={{ borderBottomWidth: 4, borderBottomColor: activeMode === mode ? "hsl(var(--primary-dark))" : "hsl(var(--border))" }}
-            >
-              {modeData.emoji} {t(modeData.labelKey)}
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Progress bar */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-1">
           <span className="text-sm font-bold text-muted-foreground">{t("study.progress")}</span>
@@ -382,10 +362,7 @@ const StudyPage = () => {
         </div>
       </div>
 
-      {/* Active mode content */}
       {modeRenderer[activeMode]()}
-
-      {/* Settings modal */}
       {showSettings && renderSettings()}
     </div>
   );

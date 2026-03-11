@@ -19,7 +19,10 @@
     "myTopics": "Мои темы",
     "friendsLeaderboard": "Рейтинг друзей",
     "recentSnaps": "Недавние сканы",
-    "seeAll": "Все"
+    "seeAll": "Все",
+    "addFriend": "Добавить друга",
+    "enterFriendId": "Введите ID друга, чтобы добавить его",
+    "addFriendBtn": "Добавить"
   },
   "scan": {
     "title": "Сканировать",
