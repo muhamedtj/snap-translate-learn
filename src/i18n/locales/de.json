@@ -19,7 +19,10 @@
     "myTopics": "Meine Themen",
     "friendsLeaderboard": "Freunde-Rangliste",
     "recentSnaps": "Letzte Scans",
-    "seeAll": "Alle"
+    "seeAll": "Alle",
+    "addFriend": "Freund hinzufügen",
+    "enterFriendId": "Gib die ID deines Freundes ein",
+    "addFriendBtn": "Hinzufügen"
   },
   "scan": {
     "title": "Bild scannen",
