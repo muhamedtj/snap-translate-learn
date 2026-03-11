@@ -19,7 +19,10 @@
     "myTopics": "Mis temas",
     "friendsLeaderboard": "Ranking de amigos",
     "recentSnaps": "Escaneos recientes",
-    "seeAll": "Ver todos"
+    "seeAll": "Ver todos",
+    "addFriend": "Añadir amigo",
+    "enterFriendId": "Introduce el ID de tu amigo",
+    "addFriendBtn": "Añadir"
   },
   "scan": {
     "title": "Escanear imagen",

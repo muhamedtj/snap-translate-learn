@@ -19,7 +19,10 @@
     "myTopics": "My Topics",
     "friendsLeaderboard": "Friends Leaderboard",
     "recentSnaps": "Recent Snaps",
-    "seeAll": "See all"
+    "seeAll": "See all",
+    "addFriend": "Add Friend",
+    "enterFriendId": "Enter your friend's ID to add them",
+    "addFriendBtn": "Add Friend"
   },
   "scan": {
     "title": "Scan Image",
