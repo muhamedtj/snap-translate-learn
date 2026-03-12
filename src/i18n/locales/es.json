@@ -10,6 +10,33 @@
     "vocabulary": "Palabras",
     "profile": "Perfil"
   },
+  "onboarding": {
+    "slide1Title": "Escanea el mundo",
+    "slide1Desc": "Apunta tu cámara a cualquier texto u objeto — la IA reconoce palabras al instante y las traduce",
+    "slide2Title": "Traducción instantánea",
+    "slide2Desc": "Obtén traducción, gramática y ejemplos de uso para cada palabra encontrada",
+    "slide3Title": "Aprende de forma inteligente",
+    "slide3Desc": "4 modos: tarjetas, audio, tests y escritura. Repetición espaciada inteligente rastrea tu progreso",
+    "slide4Title": "Tu diccionario crece",
+    "slide4Desc": "Todas las palabras guardadas por temas. Sigue tu progreso y compite con amigos",
+    "next": "Siguiente",
+    "skip": "Omitir",
+    "start": "¡Empezar!"
+  },
+  "auth": {
+    "welcome": "Inicia sesión en SnapLingo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "signOut": "Cerrar sesión",
+    "noAccount": "¿No tienes cuenta? Regístrate",
+    "hasAccount": "¿Ya tienes cuenta? Inicia sesión",
+    "continueGoogle": "Continuar con Google",
+    "continueApple": "Continuar con Apple",
+    "or": "o",
+    "error": "Ha ocurrido un error"
+  },
   "dashboard": {
     "snaps": "Escaneos",
     "words": "palabras",
@@ -33,7 +60,11 @@
     "extracting": "Extrayendo texto y traduciendo",
     "complete": "¡Análisis completo!",
     "camera": "Cámara",
-    "gallery": "Galería"
+    "gallery": "Galería",
+    "remaining": "Escaneos restantes: {{count}}",
+    "limitTitle": "Límite de escaneos gratuitos",
+    "limitDesc": "Regístrate para escanear sin límites",
+    "signUpToUnlock": "Registrarse"
   },
   "study": {
     "title": "Estudio",

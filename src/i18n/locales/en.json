@@ -10,6 +10,33 @@
     "vocabulary": "Words",
     "profile": "Profile"
   },
+  "onboarding": {
+    "slide1Title": "Scan the World Around You",
+    "slide1Desc": "Point your camera at any text or object — AI instantly recognizes words and translates them",
+    "slide2Title": "Instant Translation",
+    "slide2Desc": "Get translations, grammar notes, and usage examples for every word found",
+    "slide3Title": "Study Smart",
+    "slide3Desc": "4 training modes: flashcards, audio, quizzes, and writing. Smart spaced repetition tracks your progress",
+    "slide4Title": "Your Dictionary Grows",
+    "slide4Desc": "All words are saved by topics. Track progress and compete with friends",
+    "next": "Next",
+    "skip": "Skip",
+    "start": "Get Started!"
+  },
+  "auth": {
+    "welcome": "Sign in to SnapLingo",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "noAccount": "Don't have an account? Sign up",
+    "hasAccount": "Already have an account? Sign in",
+    "continueGoogle": "Continue with Google",
+    "continueApple": "Continue with Apple",
+    "or": "or",
+    "error": "An error occurred"
+  },
   "dashboard": {
     "snaps": "Snaps",
     "words": "words",
@@ -33,7 +60,11 @@
     "extracting": "Extracting text & translating",
     "complete": "Analysis Complete!",
     "camera": "Camera",
-    "gallery": "Gallery"
+    "gallery": "Gallery",
+    "remaining": "Scans left: {{count}}",
+    "limitTitle": "Free scan limit reached",
+    "limitDesc": "Sign up to unlock unlimited scanning",
+    "signUpToUnlock": "Sign Up"
   },
   "study": {
     "title": "Study",
