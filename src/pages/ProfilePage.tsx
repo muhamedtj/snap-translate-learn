@@ -1,4 +1,14 @@
 import { Camera, BookOpen, Star, Award, ChevronRight, ChevronDown, Settings, Trash2, Languages, Dumbbell, Copy, Pencil, LogOut, Mail, Lock } from "lucide-react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
