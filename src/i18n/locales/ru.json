@@ -35,7 +35,9 @@
     "continueGoogle": "Продолжить с Google",
     "continueApple": "Продолжить с Apple",
     "or": "или",
-    "error": "Произошла ошибка"
+    "error": "Произошла ошибка",
+    "logoutConfirmTitle": "Вы уверены?",
+    "logoutConfirmDesc": "Вы уверены, что хотите выйти из аккаунта?"
   },
   "dashboard": {
     "snaps": "Сканы",
@@ -94,7 +96,18 @@
   "vocabulary": {
     "title": "Темы",
     "search": "Поиск слов...",
-    "searchTopics": "Поиск тем..."
+    "searchTopics": "Поиск тем...",
+    "allLanguages": "Все языки",
+    "rename": "Переименовать",
+    "startStudy": "Начать изучение",
+    "resetProgress": "Сбросить прогресс",
+    "delete": "Удалить",
+    "cancel": "Отмена",
+    "save": "Сохранить",
+    "resetConfirmTitle": "Сбросить прогресс?",
+    "resetConfirmDesc": "Все слова в этой теме будут отмечены как неизученные. Это действие нельзя отменить.",
+    "deleteConfirmTitle": "Удалить тему?",
+    "deleteConfirmDesc": "Тема и все её слова будут удалены безвозвратно."
   },
   "result": {
     "original": "Оригинал",
@@ -111,6 +124,12 @@
     "title": "Карточки",
     "wordsSaved": "{{count}} слов сохранено",
     "tapToFlip": "Нажмите, чтобы перевернуть"
+  },
+  "achievements": {
+    "a1": "Серия 7 дней",
+    "a2": "Первый скан",
+    "a3": "100 слов",
+    "a4": "Быстрый ученик"
   },
   "profile": {
     "role": "Исследователь языков",
@@ -135,7 +154,9 @@
       "en": "English",
       "ru": "Русский",
       "de": "Deutsch",
-      "es": "Español"
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
     }
   }
 }

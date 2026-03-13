@@ -1,0 +1,162 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Aprenda com o mundo ao seu redor"
+  },
+  "nav": {
+    "home": "Início",
+    "scanner": "Escanear",
+    "study": "Estudar",
+    "vocabulary": "Palavras",
+    "profile": "Perfil"
+  },
+  "onboarding": {
+    "slide1Title": "Escaneie o mundo ao redor",
+    "slide1Desc": "Aponte sua câmera para qualquer texto ou objeto — a IA reconhece palavras instantaneamente e as traduz",
+    "slide2Title": "Tradução instantânea",
+    "slide2Desc": "Obtenha tradução, gramática e exemplos de uso para cada palavra encontrada",
+    "slide3Title": "Estude de forma inteligente",
+    "slide3Desc": "4 modos: cartões, áudio, testes e escrita. Repetição espaçada inteligente acompanha seu progresso",
+    "slide4Title": "Seu dicionário cresce",
+    "slide4Desc": "Todas as palavras salvas por temas. Acompanhe o progresso e compita com amigos",
+    "next": "Próximo",
+    "skip": "Pular",
+    "start": "Começar!"
+  },
+  "auth": {
+    "welcome": "Entre no SnapLingo",
+    "email": "E-mail",
+    "password": "Senha",
+    "signIn": "Entrar",
+    "signUp": "Cadastrar",
+    "signOut": "Sair",
+    "noAccount": "Não tem conta? Cadastre-se",
+    "hasAccount": "Já tem conta? Entre",
+    "continueGoogle": "Continuar com Google",
+    "continueApple": "Continuar com Apple",
+    "or": "ou",
+    "error": "Ocorreu um erro",
+    "logoutConfirmTitle": "Tem certeza?",
+    "logoutConfirmDesc": "Tem certeza de que deseja sair?"
+  },
+  "dashboard": {
+    "snaps": "Escaneamentos",
+    "words": "palavras",
+    "streak": "Sequência",
+    "scanAndLearn": "Escanear e aprender",
+    "startTraining": "Iniciar treino",
+    "myTopics": "Meus temas",
+    "friendsLeaderboard": "Ranking de amigos",
+    "recentSnaps": "Escaneamentos recentes",
+    "seeAll": "Ver todos",
+    "addFriend": "Adicionar amigo",
+    "enterFriendId": "Digite o ID do seu amigo",
+    "addFriendBtn": "Adicionar"
+  },
+  "scan": {
+    "title": "Escanear imagem",
+    "pointAtObject": "Aponte para um objeto",
+    "tapToUpload": "Toque para enviar imagem",
+    "fileTypes": "JPG, PNG até 10 MB",
+    "analyzing": "Analisando com IA...",
+    "extracting": "Extraindo texto e traduzindo",
+    "complete": "Análise completa!",
+    "camera": "Câmera",
+    "gallery": "Galeria",
+    "remaining": "Escaneamentos restantes: {{count}}",
+    "limitTitle": "Limite de escaneamentos gratuitos",
+    "limitDesc": "Cadastre-se para escanear sem limites",
+    "signUpToUnlock": "Cadastrar"
+  },
+  "study": {
+    "title": "Estudar",
+    "progress": "Progresso da sessão",
+    "dontKnow": "NÃO SEI",
+    "know": "SEI",
+    "tapToFlip": "Toque para virar",
+    "settings": "Configurações",
+    "filterByLanguage": "Filtrar por idioma",
+    "studyModes": "Modos de estudo",
+    "apply": "Aplicar",
+    "noWords": "Sem palavras para estudar",
+    "next": "Próximo",
+    "check": "Verificar",
+    "listenAndTranslate": "Ouça e adivinhe a palavra",
+    "chooseTranslation": "Escolha a tradução correta",
+    "writeTranslation": "Escreva a tradução",
+    "typePlaceholder": "Digite a tradução...",
+    "correctAnswer": "Resposta correta",
+    "modes": {
+      "flashcards": "Cartões",
+      "audio": "Áudio",
+      "multipleChoice": "Escolher resposta",
+      "writeTranslation": "Escrever tradução"
+    }
+  },
+  "vocabulary": {
+    "title": "Temas",
+    "search": "Buscar palavras...",
+    "searchTopics": "Buscar temas...",
+    "allLanguages": "Todos os idiomas",
+    "rename": "Renomear",
+    "startStudy": "Começar a estudar",
+    "resetProgress": "Redefinir progresso",
+    "delete": "Excluir",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "resetConfirmTitle": "Redefinir progresso?",
+    "resetConfirmDesc": "Todas as palavras deste tema serão marcadas como não aprendidas. Esta ação não pode ser desfeita.",
+    "deleteConfirmTitle": "Excluir tema?",
+    "deleteConfirmDesc": "Este tema e todas as suas palavras serão excluídos permanentemente."
+  },
+  "result": {
+    "original": "Original",
+    "translation": "Tradução",
+    "grammarNotes": "Gramática",
+    "vocabulary": "Vocabulário",
+    "scannedAlt": "Escaneado"
+  },
+  "history": {
+    "title": "Histórico",
+    "subtitle": "Todas as suas imagens escaneadas"
+  },
+  "flashcards": {
+    "title": "Cartões",
+    "wordsSaved": "{{count}} palavras salvas",
+    "tapToFlip": "Toque para virar"
+  },
+  "achievements": {
+    "a1": "Sequência de 7 dias",
+    "a2": "Primeiro escaneamento",
+    "a3": "100 palavras",
+    "a4": "Aprendiz rápido"
+  },
+  "profile": {
+    "role": "Explorador de idiomas",
+    "linguaMaster": "Mestre Lingua",
+    "totalSnaps": "Total de escaneamentos",
+    "wordsLearned": "Palavras aprendidas",
+    "mastered": "Dominadas",
+    "dayStreak": "Dias seguidos",
+    "achievements": "Conquistas",
+    "settings": "Configurações",
+    "studyPreferences": "Preferências de estudo",
+    "recentlyDeleted": "Lixeira",
+    "changeLanguage": "Mudar idioma",
+    "flashcards": "Cartões",
+    "helpSupport": "Ajuda e suporte"
+  },
+  "settings": {
+    "title": "Configurações",
+    "language": "Idioma do app",
+    "languageDesc": "Escolha o idioma da interface",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
+    }
+  }
+}
