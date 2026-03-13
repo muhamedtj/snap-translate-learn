@@ -6,6 +6,8 @@ import en from "./locales/en.json";
 import ru from "./locales/ru.json";
 import de from "./locales/de.json";
 import es from "./locales/es.json";
+import pt from "./locales/pt.json";
+import kk from "./locales/kk.json";
 
 i18n
   .use(LanguageDetector)
@@ -16,6 +18,8 @@ i18n
       ru: { translation: ru },
       de: { translation: de },
       es: { translation: es },
+      pt: { translation: pt },
+      kk: { translation: kk },
     },
     fallbackLng: "en",
     interpolation: {

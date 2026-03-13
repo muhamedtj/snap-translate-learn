@@ -1,0 +1,162 @@
+{
+  "app": {
+    "name": "SnapLingo",
+    "tagline": "Айналаңдағы әлемнен үйрен"
+  },
+  "nav": {
+    "home": "Басты",
+    "scanner": "Сканер",
+    "study": "Оқу",
+    "vocabulary": "Сөздер",
+    "profile": "Профиль"
+  },
+  "onboarding": {
+    "slide1Title": "Айналаңдағы әлемді сканерлеңіз",
+    "slide1Desc": "Камераны кез келген мәтінге немесе нысанға бағыттаңыз — AI сөздерді бірден танып, аударады",
+    "slide2Title": "Лезде аударма",
+    "slide2Desc": "Әр сөз үшін аударма, грамматика және қолдану мысалдарын алыңыз",
+    "slide3Title": "Ақылды оқу",
+    "slide3Desc": "4 режим: карточкалар, аудио, тесттер және жазу. Ақылды қайталау жүйесі прогресіңізді бақылайды",
+    "slide4Title": "Сөздігіңіз өседі",
+    "slide4Desc": "Барлық сөздер тақырыптар бойынша сақталады. Прогресті бақылаңыз және достарыңызбен жарысыңыз",
+    "next": "Келесі",
+    "skip": "Өткізіп жіберу",
+    "start": "Бастау!"
+  },
+  "auth": {
+    "welcome": "SnapLingo-ға кіріңіз",
+    "email": "Электрондық пошта",
+    "password": "Құпия сөз",
+    "signIn": "Кіру",
+    "signUp": "Тіркелу",
+    "signOut": "Шығу",
+    "noAccount": "Аккаунтыңыз жоқ па? Тіркеліңіз",
+    "hasAccount": "Аккаунтыңыз бар ма? Кіріңіз",
+    "continueGoogle": "Google арқылы жалғастыру",
+    "continueApple": "Apple арқылы жалғастыру",
+    "or": "немесе",
+    "error": "Қате орын алды",
+    "logoutConfirmTitle": "Сенімдісіз бе?",
+    "logoutConfirmDesc": "Аккаунттан шығуды қалайсыз ба?"
+  },
+  "dashboard": {
+    "snaps": "Сканерлеулер",
+    "words": "сөз",
+    "streak": "Серия",
+    "scanAndLearn": "Сканерлеу және үйрену",
+    "startTraining": "Жаттығуды бастау",
+    "myTopics": "Менің тақырыптарым",
+    "friendsLeaderboard": "Достар рейтингі",
+    "recentSnaps": "Соңғы сканерлеулер",
+    "seeAll": "Барлығы",
+    "addFriend": "Дос қосу",
+    "enterFriendId": "Досыңыздың ID-ін енгізіңіз",
+    "addFriendBtn": "Қосу"
+  },
+  "scan": {
+    "title": "Суретті сканерлеу",
+    "pointAtObject": "Нысанға бағыттаңыз",
+    "tapToUpload": "Суретті жүктеу үшін басыңыз",
+    "fileTypes": "JPG, PNG 10 МБ дейін",
+    "analyzing": "AI-мен талдау...",
+    "extracting": "Мәтінді шығару және аудару",
+    "complete": "Талдау аяқталды!",
+    "camera": "Камера",
+    "gallery": "Галерея",
+    "remaining": "Қалған сканерлеулер: {{count}}",
+    "limitTitle": "Тегін сканерлеу лимиті",
+    "limitDesc": "Шексіз сканерлеу үшін тіркеліңіз",
+    "signUpToUnlock": "Тіркелу"
+  },
+  "study": {
+    "title": "Оқу",
+    "progress": "Сессия прогресі",
+    "dontKnow": "БІЛМЕЙМІН",
+    "know": "БІЛЕМІН",
+    "tapToFlip": "Аудару үшін басыңыз",
+    "settings": "Параметрлер",
+    "filterByLanguage": "Тіл бойынша сүзу",
+    "studyModes": "Оқу режимдері",
+    "apply": "Қолдану",
+    "noWords": "Оқуға сөздер жоқ",
+    "next": "Келесі",
+    "check": "Тексеру",
+    "listenAndTranslate": "Тыңдаңыз және сөзді болжаңыз",
+    "chooseTranslation": "Дұрыс аударманы таңдаңыз",
+    "writeTranslation": "Аударманы жазыңыз",
+    "typePlaceholder": "Аударманы теріңіз...",
+    "correctAnswer": "Дұрыс жауап",
+    "modes": {
+      "flashcards": "Карточкалар",
+      "audio": "Аудио",
+      "multipleChoice": "Жауап таңдау",
+      "writeTranslation": "Аударма жазу"
+    }
+  },
+  "vocabulary": {
+    "title": "Тақырыптар",
+    "search": "Сөздерді іздеу...",
+    "searchTopics": "Тақырыптарды іздеу...",
+    "allLanguages": "Барлық тілдер",
+    "rename": "Атын өзгерту",
+    "startStudy": "Оқуды бастау",
+    "resetProgress": "Прогресті қалпына келтіру",
+    "delete": "Жою",
+    "cancel": "Болдырмау",
+    "save": "Сақтау",
+    "resetConfirmTitle": "Прогресті қалпына келтіру керек пе?",
+    "resetConfirmDesc": "Бұл тақырыптағы барлық сөздер оқылмаған деп белгіленеді. Бұл әрекетті болдырмау мүмкін емес.",
+    "deleteConfirmTitle": "Тақырыпты жою керек пе?",
+    "deleteConfirmDesc": "Бұл тақырып пен оның барлық сөздері біржолата жойылады."
+  },
+  "result": {
+    "original": "Түпнұсқа",
+    "translation": "Аударма",
+    "grammarNotes": "Грамматика",
+    "vocabulary": "Сөздік",
+    "scannedAlt": "Сканерленген"
+  },
+  "history": {
+    "title": "Тарих",
+    "subtitle": "Барлық сканерленген суреттер"
+  },
+  "flashcards": {
+    "title": "Карточкалар",
+    "wordsSaved": "{{count}} сөз сақталды",
+    "tapToFlip": "Аудару үшін басыңыз"
+  },
+  "achievements": {
+    "a1": "7 күндік серия",
+    "a2": "Бірінші сканерлеу",
+    "a3": "100 сөз",
+    "a4": "Жылдам оқушы"
+  },
+  "profile": {
+    "role": "Тіл зерттеушісі",
+    "linguaMaster": "Тіл шебері",
+    "totalSnaps": "Барлық сканерлеулер",
+    "wordsLearned": "Үйренілген сөздер",
+    "mastered": "Меңгерілген",
+    "dayStreak": "Күн қатарынан",
+    "achievements": "Жетістіктер",
+    "settings": "Параметрлер",
+    "studyPreferences": "Оқу параметрлері",
+    "recentlyDeleted": "Себет",
+    "changeLanguage": "Тілді өзгерту",
+    "flashcards": "Карточкалар",
+    "helpSupport": "Көмек"
+  },
+  "settings": {
+    "title": "Параметрлер",
+    "language": "Қолданба тілі",
+    "languageDesc": "Интерфейс тілін таңдаңыз",
+    "languages": {
+      "en": "English",
+      "ru": "Русский",
+      "de": "Deutsch",
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
+    }
+  }
+}

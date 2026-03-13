@@ -29,13 +29,15 @@
     "password": "Password",
     "signIn": "Sign In",
     "signUp": "Sign Up",
-    "signOut": "Sign Out",
+    "signOut": "Log Out",
     "noAccount": "Don't have an account? Sign up",
     "hasAccount": "Already have an account? Sign in",
     "continueGoogle": "Continue with Google",
     "continueApple": "Continue with Apple",
     "or": "or",
-    "error": "An error occurred"
+    "error": "An error occurred",
+    "logoutConfirmTitle": "Are you sure?",
+    "logoutConfirmDesc": "Are you sure you want to log out?"
   },
   "dashboard": {
     "snaps": "Snaps",
@@ -94,7 +96,18 @@
   "vocabulary": {
     "title": "Topics",
     "search": "Search words...",
-    "searchTopics": "Search topics..."
+    "searchTopics": "Search topics...",
+    "allLanguages": "All languages",
+    "rename": "Rename",
+    "startStudy": "Start studying",
+    "resetProgress": "Reset progress",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "resetConfirmTitle": "Reset progress?",
+    "resetConfirmDesc": "All words in this topic will be marked as unlearned. This cannot be undone.",
+    "deleteConfirmTitle": "Delete topic?",
+    "deleteConfirmDesc": "This topic and all its words will be permanently deleted."
   },
   "result": {
     "original": "Original",
@@ -111,6 +124,12 @@
     "title": "Flashcards",
     "wordsSaved": "{{count}} words saved",
     "tapToFlip": "Tap to flip"
+  },
+  "achievements": {
+    "a1": "7 Day Streak",
+    "a2": "First Snap",
+    "a3": "100 Words",
+    "a4": "Speed Learner"
   },
   "profile": {
     "role": "Language Explorer",
@@ -135,7 +154,9 @@
       "en": "English",
       "ru": "Русский",
       "de": "Deutsch",
-      "es": "Español"
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
     }
   }
 }

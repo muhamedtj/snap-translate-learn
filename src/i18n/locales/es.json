@@ -35,7 +35,9 @@
     "continueGoogle": "Continuar con Google",
     "continueApple": "Continuar con Apple",
     "or": "o",
-    "error": "Ha ocurrido un error"
+    "error": "Ha ocurrido un error",
+    "logoutConfirmTitle": "¿Estás seguro?",
+    "logoutConfirmDesc": "¿Estás seguro de que quieres cerrar sesión?"
   },
   "dashboard": {
     "snaps": "Escaneos",
@@ -94,7 +96,18 @@
   "vocabulary": {
     "title": "Temas",
     "search": "Buscar palabras...",
-    "searchTopics": "Buscar temas..."
+    "searchTopics": "Buscar temas...",
+    "allLanguages": "Todos los idiomas",
+    "rename": "Renombrar",
+    "startStudy": "Empezar a estudiar",
+    "resetProgress": "Restablecer progreso",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "resetConfirmTitle": "¿Restablecer progreso?",
+    "resetConfirmDesc": "Todas las palabras de este tema se marcarán como no aprendidas. Esta acción no se puede deshacer.",
+    "deleteConfirmTitle": "¿Eliminar tema?",
+    "deleteConfirmDesc": "Este tema y todas sus palabras serán eliminados permanentemente."
   },
   "result": {
     "original": "Original",
@@ -111,6 +124,12 @@
     "title": "Tarjetas",
     "wordsSaved": "{{count}} palabras guardadas",
     "tapToFlip": "Toca para voltear"
+  },
+  "achievements": {
+    "a1": "Racha de 7 días",
+    "a2": "Primer escaneo",
+    "a3": "100 palabras",
+    "a4": "Aprendiz rápido"
   },
   "profile": {
     "role": "Explorador de idiomas",
@@ -135,7 +154,9 @@
       "en": "English",
       "ru": "Русский",
       "de": "Deutsch",
-      "es": "Español"
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
     }
   }
 }
