@@ -304,10 +304,32 @@ const ProfilePage = () => {
         )}
       </div>
 
-      {/* Logout */}
-      <button onClick={signOut} className="card-volumetric w-full flex items-center gap-3 px-4 py-4 active:bg-muted/50">
-        <LogOut size={20} className="text-destructive" />
-        <span className="text-base font-bold text-destructive">{t("auth.signOut")}</span>
+      {/* Logout confirmation */}
+      <AlertDialog open={logoutConfirm} onOpenChange={setLogoutConfirm}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t("auth.logoutConfirmTitle")}</AlertDialogTitle>
+            <AlertDialogDescription>{t("auth.logoutConfirmDesc")}</AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>{t("vocabulary.cancel")}</AlertDialogCancel>
+            <AlertDialogAction onClick={signOut} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+              {t("auth.signOut")}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      {/* Logout button */}
+      <button
+        onClick={() => setLogoutConfirm(true)}
+        className="w-full rounded-2xl bg-destructive text-destructive-foreground font-black text-base py-4 active:scale-[0.98] transition-transform"
+        style={{ borderBottomWidth: 6, borderBottomColor: "hsl(0 60% 35%)" }}
+      >
+        <div className="flex items-center justify-center gap-3">
+          <LogOut size={20} />
+          <span>{t("auth.signOut")}</span>
+        </div>
       </button>
     </div>
   );
