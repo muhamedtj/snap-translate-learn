@@ -281,7 +281,7 @@ const ProfilePage = () => {
           {achievements.map((ach) => (
             <div key={ach.id} className={`card-volumetric min-w-[120px] p-4 flex flex-col items-center gap-2 flex-shrink-0 ${!ach.unlocked ? "opacity-40" : ""}`}>
               <span className="text-2xl">{ach.emoji}</span>
-              <span className="text-xs font-bold text-foreground text-center">{ach.name}</span>
+              <span className="text-xs font-bold text-foreground text-center">{t(`achievements.${ach.id}`)}</span>
             </div>
           ))}
         </div>

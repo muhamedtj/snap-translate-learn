@@ -99,7 +99,7 @@ const ScanPage = () => {
 
       {/* Bottom controls */}
       {state === "idle" && (
-        <div className="flex items-center justify-center gap-8 pb-4">
+        <div className="flex items-center justify-center gap-8 pb-20">
           <button onClick={handleCapture} className="w-10 h-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center">
             <Image size={22} className="text-primary-foreground" />
           </button>
