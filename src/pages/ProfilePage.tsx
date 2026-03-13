@@ -49,6 +49,7 @@ const ProfilePage = () => {
   const [editingName, setEditingName] = useState(false);
   const [nameInput, setNameInput] = useState(profile.name);
   const [copied, setCopied] = useState(false);
+  const [logoutConfirm, setLogoutConfirm] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const handleEmailAuth = async () => {
