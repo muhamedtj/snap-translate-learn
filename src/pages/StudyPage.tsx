@@ -25,7 +25,9 @@ const StudyPage = () => {
 
   const saved = useMemo(() => loadSettings(), []);
 
-  const [showSettings, setShowSettings] = useState(false);
+  const [showSettings, setShowSettings] = useState(() => {
+    return !localStorage.getItem(STORAGE_KEY) || saved.languages.length === 0;
+  });
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>(saved.languages);
   const [selectedModes, setSelectedModes] = useState<StudyMode[]>(saved.modes);
 
@@ -167,8 +169,15 @@ const StudyPage = () => {
           </div>
 
           <button
-            onClick={() => setShowSettings(false)}
-            className="btn-volumetric-primary w-full mt-5 text-base"
+            onClick={() => {
+              if (selectedLanguages.length === 0 || selectedModes.length === 0) {
+                // don't close, maybe show an alert?
+                return;
+              }
+              setShowSettings(false);
+            }}
+            disabled={selectedLanguages.length === 0 || selectedModes.length === 0}
+            className="btn-volumetric-primary w-full mt-5 text-base disabled:opacity-50"
           >
             {t("study.apply")}
           </button>
