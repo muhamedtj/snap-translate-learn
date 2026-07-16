@@ -1,4 +1,4 @@
-import { Camera, BookOpen, Star, Award, ChevronRight, ChevronDown, Settings, Trash2, Languages, Dumbbell, Copy, Pencil } from "lucide-react";
+import { Camera, BookOpen, Star, Award, ChevronRight, ChevronDown, Settings, Trash2, Languages, Dumbbell, Copy, Pencil, LogOut } from "lucide-react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -161,6 +161,11 @@ const ProfilePage = () => {
               { icon: Dumbbell, label: t("profile.studyPreferences"), action: () => {} },
               { icon: Trash2, label: t("profile.recentlyDeleted"), action: () => {} },
               { icon: Languages, label: t("profile.changeLanguage"), action: () => navigate("/settings") },
+              { icon: LogOut, label: t("profile.logout") || "Log Out", action: () => {
+                localStorage.removeItem(PROFILE_KEY);
+                navigate("/");
+                window.location.reload();
+              }},
             ].map(({ icon: Icon, label, action }) => (
               <button
                 key={label}

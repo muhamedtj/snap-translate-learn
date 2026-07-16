@@ -106,5 +106,10 @@
       "de": "Deutsch",
       "es": "Español"
     }
+  },
+  "sidebar": {
+    "search": "Search scans...",
+    "recentSnaps": "Recent Scans",
+    "seeAllHistory": "See all history"
   }
-}
+}

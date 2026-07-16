@@ -56,6 +56,15 @@ const SettingsPage = () => {
           ))}
         </div>
       </div>
+
+      <div className="mt-12 text-center">
+        <button 
+          onClick={() => navigate('/admin')} 
+          className="text-xs font-bold text-muted-foreground/30 hover:text-primary transition-colors"
+        >
+          LingoSnap Admin
+        </button>
+      </div>
     </div>
   );
 };

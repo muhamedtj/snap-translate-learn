@@ -106,5 +106,10 @@
       "de": "Deutsch",
       "es": "Español"
     }
+  },
+  "sidebar": {
+    "search": "Поиск сканов...",
+    "recentSnaps": "Недавние сканы",
+    "seeAllHistory": "Посмотреть всю историю"
   }
-}
+}

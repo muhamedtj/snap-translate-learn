@@ -1,8 +1,9 @@
-import { Flame, Camera, Star, Zap, Dumbbell, Trash2, UserPlus, X } from "lucide-react";
+import { Flame, Camera, Star, Zap, Dumbbell, Trash2, UserPlus, X, Menu } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { userStats, topics, friends as defaultFriends } from "@/lib/mock-data";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -23,8 +24,12 @@ const Dashboard = () => {
     <div className="min-h-screen pb-24 px-5 pt-12">
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
-        <h1 className="text-2xl font-black text-foreground">SnapLingo</h1>
+        <div className="flex items-center gap-3">
+          <SidebarTrigger className="md:hidden -ml-2 text-foreground/70" />
+          <h1 className="text-2xl font-black text-foreground">SnapLingo</h1>
+        </div>
         <div className="flex items-center gap-2">
+
           {[
             { icon: Flame, value: `${userStats.streak}d`, color: "text-warning" },
             { icon: Camera, value: userStats.totalSnaps, color: "text-primary" },
