@@ -10,6 +10,35 @@
     "vocabulary": "Wörter",
     "profile": "Profil"
   },
+  "onboarding": {
+    "slide1Title": "Scanne die Welt um dich",
+    "slide1Desc": "Richte deine Kamera auf Text oder Objekte — KI erkennt Wörter sofort und übersetzt sie",
+    "slide2Title": "Sofortige Übersetzung",
+    "slide2Desc": "Erhalte Übersetzungen, Grammatik und Beispiele für jedes Wort",
+    "slide3Title": "Lerne schlau",
+    "slide3Desc": "4 Lernmodi: Karten, Audio, Tests und Schreiben. Intelligente Wiederholung merkt sich deinen Fortschritt",
+    "slide4Title": "Dein Wortschatz wächst",
+    "slide4Desc": "Alle Wörter nach Themen gespeichert. Fortschritt verfolgen und mit Freunden messen",
+    "next": "Weiter",
+    "skip": "Überspringen",
+    "start": "Los geht's!"
+  },
+  "auth": {
+    "welcome": "Bei SnapLingo anmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden",
+    "noAccount": "Kein Konto? Registrieren",
+    "hasAccount": "Bereits ein Konto? Anmelden",
+    "continueGoogle": "Mit Google fortfahren",
+    "continueApple": "Mit Apple fortfahren",
+    "or": "oder",
+    "error": "Ein Fehler ist aufgetreten",
+    "logoutConfirmTitle": "Sind Sie sicher?",
+    "logoutConfirmDesc": "Möchten Sie sich wirklich abmelden?"
+  },
   "dashboard": {
     "snaps": "Scans",
     "words": "Wörter",
@@ -33,7 +62,11 @@
     "extracting": "Text extrahieren & übersetzen",
     "complete": "Analyse abgeschlossen!",
     "camera": "Kamera",
-    "gallery": "Galerie"
+    "gallery": "Galerie",
+    "remaining": "Scans übrig: {{count}}",
+    "limitTitle": "Kostenlose Scans aufgebraucht",
+    "limitDesc": "Registriere dich für unbegrenztes Scannen",
+    "signUpToUnlock": "Registrieren"
   },
   "study": {
     "title": "Lernen",
@@ -63,7 +96,18 @@
   "vocabulary": {
     "title": "Themen",
     "search": "Wörter suchen...",
-    "searchTopics": "Themen suchen..."
+    "searchTopics": "Themen suchen...",
+    "allLanguages": "Alle Sprachen",
+    "rename": "Umbenennen",
+    "startStudy": "Lernen starten",
+    "resetProgress": "Fortschritt zurücksetzen",
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "resetConfirmTitle": "Fortschritt zurücksetzen?",
+    "resetConfirmDesc": "Alle Wörter in diesem Thema werden als ungelernt markiert. Dies kann nicht rückgängig gemacht werden.",
+    "deleteConfirmTitle": "Thema löschen?",
+    "deleteConfirmDesc": "Dieses Thema und alle seine Wörter werden dauerhaft gelöscht."
   },
   "result": {
     "original": "Original",
@@ -80,6 +124,12 @@
     "title": "Karteikarten",
     "wordsSaved": "{{count}} Wörter gespeichert",
     "tapToFlip": "Tippen zum Umdrehen"
+  },
+  "achievements": {
+    "a1": "7-Tage-Serie",
+    "a2": "Erster Scan",
+    "a3": "100 Wörter",
+    "a4": "Schnelllerner"
   },
   "profile": {
     "role": "Sprachentdecker",
@@ -104,7 +154,9 @@
       "en": "English",
       "ru": "Русский",
       "de": "Deutsch",
-      "es": "Español"
+      "es": "Español",
+      "pt": "Português",
+      "kk": "Қазақша"
     }
   }
 }

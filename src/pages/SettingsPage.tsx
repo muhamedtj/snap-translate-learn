@@ -7,6 +7,8 @@ const languages = [
   { code: "ru", flag: "🇷🇺" },
   { code: "de", flag: "🇩🇪" },
   { code: "es", flag: "🇪🇸" },
+  { code: "pt", flag: "🇧🇷" },
+  { code: "kk", flag: "🇰🇿" },
 ];
 
 const SettingsPage = () => {
