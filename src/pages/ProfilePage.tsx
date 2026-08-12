@@ -277,9 +277,9 @@ const ProfilePage = () => {
       {/* Achievements */}
       <div className="mb-6">
         <h2 className="text-lg font-extrabold text-foreground mb-3">{t("profile.achievements")}</h2>
-        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5">
+        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-4 xl:grid-cols-6">
           {achievements.map((ach) => (
-            <div key={ach.id} className={`card-volumetric min-w-[120px] p-4 flex flex-col items-center gap-2 flex-shrink-0 ${!ach.unlocked ? "opacity-40" : ""}`}>
+            <div key={ach.id} className={`card-volumetric min-w-[120px] md:min-w-0 p-4 flex flex-col items-center gap-2 flex-shrink-0 ${!ach.unlocked ? "opacity-40" : ""}`}>
               <span className="text-2xl">{ach.emoji}</span>
               <span className="text-xs font-bold text-foreground text-center">{t(`achievements.${ach.id}`)}</span>
             </div>
