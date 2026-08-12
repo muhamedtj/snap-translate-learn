@@ -102,7 +102,7 @@ const StudyPage = () => {
 
   if (total === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center pb-24 pt-12 px-5">
+      <div className="min-h-screen flex flex-col items-center justify-center pb-24 md:pb-12 pt-12 md:pt-10 px-5 md:px-8 max-w-2xl mx-auto w-full">
         <p className="text-xl font-bold text-muted-foreground">{t("study.noWords")}</p>
         <button onClick={() => setShowSettings(true)} className="btn-volumetric-primary mt-4 px-6 py-3 text-base">
           <Settings2 size={18} className="inline mr-2" />
@@ -344,7 +344,7 @@ const StudyPage = () => {
   const currentModeData = studyModes.find((m) => m.id === activeMode)!;
 
   return (
-    <div className="min-h-screen flex flex-col pb-24 pt-12 px-5">
+    <div className="min-h-screen flex flex-col pb-24 md:pb-12 pt-12 md:pt-10 px-5 md:px-8 max-w-2xl mx-auto w-full">
       <div className="flex items-center justify-between mb-2">
         <h1 className="text-xl font-black text-foreground">{t("study.title")}</h1>
         <div className="flex items-center gap-2">

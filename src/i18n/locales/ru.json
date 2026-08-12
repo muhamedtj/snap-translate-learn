@@ -158,5 +158,11 @@
       "pt": "Português",
       "kk": "Қазақша"
     }
+  },
+  "sidebar": {
+    "navigation": "Навигация",
+    "search": "Поиск снимков",
+    "recentSnaps": "Недавние снимки",
+    "seeAllHistory": "Вся история"
   }
 }

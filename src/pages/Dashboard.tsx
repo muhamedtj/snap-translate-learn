@@ -21,12 +21,12 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen pb-24 px-5 pt-12">
+    <div className="min-h-screen pb-24 md:pb-12 px-5 md:px-8 lg:px-12 pt-12 md:pt-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
           <SidebarTrigger className="md:hidden -ml-2 text-foreground/70" />
-          <h1 className="text-2xl font-black text-foreground">SnapLingo</h1>
+          <h1 className="text-2xl md:text-3xl font-black text-foreground">SnapLingo</h1>
         </div>
         <div className="flex items-center gap-2">
 
@@ -44,24 +44,26 @@ const Dashboard = () => {
       </div>
 
       {/* Main CTAs */}
-      <button onClick={() => navigate("/scan")} className="btn-volumetric-primary w-full flex items-center justify-center gap-3 mb-3">
-        <Zap size={24} />
-        <span>{t("dashboard.scanAndLearn")}</span>
-      </button>
-      <button onClick={() => navigate("/study")} className="btn-volumetric-warning w-full flex items-center justify-center gap-3 mb-6">
-        <Dumbbell size={24} />
-        <span>{t("dashboard.startTraining")}</span>
-      </button>
+      <div className="grid gap-3 sm:grid-cols-2 mb-6">
+        <button onClick={() => navigate("/scan")} className="btn-volumetric-primary w-full flex items-center justify-center gap-3">
+          <Zap size={24} />
+          <span>{t("dashboard.scanAndLearn")}</span>
+        </button>
+        <button onClick={() => navigate("/study")} className="btn-volumetric-warning w-full flex items-center justify-center gap-3">
+          <Dumbbell size={24} />
+          <span>{t("dashboard.startTraining")}</span>
+        </button>
+      </div>
 
       {/* My Topics */}
       <div className="mb-6">
         <h2 className="text-lg font-extrabold text-foreground mb-3">{t("dashboard.myTopics")}</h2>
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {topics.map((topic) => (
             <div
               key={topic.id}
               onClick={() => navigate(`/study?topic=${topic.id}`)}
-              className="card-volumetric min-w-[160px] p-4 flex-shrink-0 relative cursor-pointer active:scale-[0.97] transition-transform"
+              className="card-volumetric min-w-[160px] md:min-w-0 p-4 flex-shrink-0 relative cursor-pointer active:scale-[0.97] transition-transform"
             >
               <button className="absolute top-2 right-2 w-7 h-7 rounded-xl bg-destructive/10 flex items-center justify-center">
                 <Trash2 size={14} className="text-destructive" />
@@ -85,8 +87,8 @@ const Dashboard = () => {
             <UserPlus size={18} className="text-primary" />
           </button>
         </div>
-        <div className="card-volumetric p-4">
-          <div className="flex items-center justify-around">
+        <div className="card-volumetric p-4 md:p-6">
+          <div className="flex items-center justify-around flex-wrap gap-4">
             {friendsList.map((friend, i) => (
               <div key={friend.id} className="flex flex-col items-center gap-1">
                 <div className={`w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-sm ${

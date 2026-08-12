@@ -36,7 +36,7 @@ const AppContent = () => {
       <div className="flex min-h-screen w-full bg-background">
         <ChatSidebar />
         <main className="flex-1 relative overflow-x-hidden">
-          <div className="max-w-lg mx-auto min-h-screen relative">
+          <div className="w-full max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-6xl mx-auto min-h-screen relative">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/scan" element={<ScanPage />} />

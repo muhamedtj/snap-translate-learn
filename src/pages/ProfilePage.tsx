@@ -86,7 +86,7 @@ const ProfilePage = () => {
   // Not authenticated view
   if (!user) {
     return (
-      <div className="min-h-screen px-5 pt-12 pb-24">
+      <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-12 md:pt-10 pb-24 md:pb-12">
         <h1 className="text-2xl font-black text-foreground mb-6 text-center">{t("auth.welcome")}</h1>
 
         {/* OAuth buttons */}
@@ -217,7 +217,7 @@ const ProfilePage = () => {
   ];
 
   return (
-    <div className="min-h-screen px-5 pt-12 pb-24">
+    <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-12 md:pt-10 pb-24 md:pb-12">
       {/* Avatar */}
       <div className="flex flex-col items-center mb-6 animate-fade-up">
         <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} />
@@ -264,7 +264,7 @@ const ProfilePage = () => {
       </div>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
         {stats.map(({ icon: Icon, label, value, color }, i) => (
           <div key={label} className="card-volumetric p-4 animate-fade-up" style={{ animationDelay: `${i * 60}ms`, animationFillMode: "both" }}>
             <Icon size={20} className={`${color} mb-2`} strokeWidth={2.5} />
@@ -277,9 +277,9 @@ const ProfilePage = () => {
       {/* Achievements */}
       <div className="mb-6">
         <h2 className="text-lg font-extrabold text-foreground mb-3">{t("profile.achievements")}</h2>
-        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5">
+        <div className="flex gap-3 overflow-x-auto pb-1 -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-4 xl:grid-cols-6">
           {achievements.map((ach) => (
-            <div key={ach.id} className={`card-volumetric min-w-[120px] p-4 flex flex-col items-center gap-2 flex-shrink-0 ${!ach.unlocked ? "opacity-40" : ""}`}>
+            <div key={ach.id} className={`card-volumetric min-w-[120px] md:min-w-0 p-4 flex flex-col items-center gap-2 flex-shrink-0 ${!ach.unlocked ? "opacity-40" : ""}`}>
               <span className="text-2xl">{ach.emoji}</span>
               <span className="text-xs font-bold text-foreground text-center">{t(`achievements.${ach.id}`)}</span>
             </div>

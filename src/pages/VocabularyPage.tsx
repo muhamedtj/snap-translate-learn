@@ -76,8 +76,8 @@ const VocabularyPage = () => {
   };
 
   return (
-    <div className="min-h-screen pb-24 pt-12 px-5">
-      <h1 className="text-2xl font-black text-foreground mb-4">{t("vocabulary.title")}</h1>
+    <div className="min-h-screen pb-24 md:pb-12 pt-12 md:pt-10 px-5 md:px-8 lg:px-12">
+      <h1 className="text-2xl md:text-3xl font-black text-foreground mb-4">{t("vocabulary.title")}</h1>
 
       {/* Search + Filter */}
       <div className="flex gap-2 mb-5">
@@ -120,7 +120,7 @@ const VocabularyPage = () => {
       </div>
 
       {/* Topics list */}
-      <div className="space-y-3">
+      <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((topic, i) => {
           const progress = getTopicProgress(topic.id);
           const isComplete = progress === 100;

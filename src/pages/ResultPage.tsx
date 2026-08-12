@@ -11,7 +11,7 @@ const ResultPage = () => {
   const snap = mockSnaps.find((s) => s.id === id) ?? mockSnaps[0];
 
   return (
-    <div className="min-h-screen px-5 pt-14 pb-24">
+    <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-14 md:pt-10 pb-24 md:pb-12 max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <button
           onClick={() => navigate(-1)}
