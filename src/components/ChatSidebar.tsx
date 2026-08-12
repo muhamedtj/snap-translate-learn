@@ -10,10 +10,18 @@ import {
   SidebarGroupLabel,
   SidebarGroupContent
 } from "@/components/ui/sidebar";
-import { MessageSquare, Plus, Search, History } from "lucide-react";
+import { MessageSquare, Plus, Search, History, Home, Scan, GraduationCap, BookOpen, User } from "lucide-react";
 import { mockSnaps } from "@/lib/mock-data";
 import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
+
+const navItems = [
+  { path: "/", icon: Home, labelKey: "nav.home" },
+  { path: "/scan", icon: Scan, labelKey: "nav.scanner" },
+  { path: "/study", icon: GraduationCap, labelKey: "nav.study" },
+  { path: "/vocabulary", icon: BookOpen, labelKey: "nav.vocabulary" },
+  { path: "/profile", icon: User, labelKey: "nav.profile" },
+];
 
 const ChatSidebar = () => {
   const navigate = useNavigate();
