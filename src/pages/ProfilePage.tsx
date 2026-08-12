@@ -86,7 +86,7 @@ const ProfilePage = () => {
   // Not authenticated view
   if (!user) {
     return (
-      <div className="min-h-screen px-5 pt-12 pb-24">
+      <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-12 md:pt-10 pb-24 md:pb-12">
         <h1 className="text-2xl font-black text-foreground mb-6 text-center">{t("auth.welcome")}</h1>
 
         {/* OAuth buttons */}
@@ -217,7 +217,7 @@ const ProfilePage = () => {
   ];
 
   return (
-    <div className="min-h-screen px-5 pt-12 pb-24">
+    <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-12 md:pt-10 pb-24 md:pb-12">
       {/* Avatar */}
       <div className="flex flex-col items-center mb-6 animate-fade-up">
         <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleAvatarChange} />
