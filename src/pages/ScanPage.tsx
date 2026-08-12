@@ -40,7 +40,7 @@ const ScanPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-foreground flex flex-col items-center justify-between pb-24 pt-16 relative">
+    <div className="min-h-screen bg-foreground flex flex-col items-center justify-between pb-24 md:pb-12 pt-16 md:pt-12 relative">
       {/* Free scans counter */}
       {!user && state === "idle" && (
         <div className="absolute top-4 right-4 px-3 py-1.5 rounded-xl bg-primary-foreground/10">
@@ -51,7 +51,7 @@ const ScanPage = () => {
       )}
 
       {/* Viewfinder */}
-      <div className="flex-1 flex items-center justify-center w-full px-8">
+      <div className="flex-1 flex items-center justify-center w-full px-8 max-w-xl mx-auto">
         {state === "idle" && (
           <div className="w-full aspect-square rounded-3xl border-4 border-dashed border-primary-foreground/40 flex items-center justify-center">
             <p className="text-primary-foreground/60 text-lg font-bold text-center px-4">
@@ -99,7 +99,7 @@ const ScanPage = () => {
 
       {/* Bottom controls */}
       {state === "idle" && (
-        <div className="flex items-center justify-center gap-8 pb-20">
+        <div className="flex items-center justify-center gap-8 pb-20 md:pb-8">
           <button onClick={handleCapture} className="w-10 h-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center">
             <Image size={22} className="text-primary-foreground" />
           </button>

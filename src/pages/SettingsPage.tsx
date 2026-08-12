@@ -16,7 +16,7 @@ const SettingsPage = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="min-h-screen px-5 pt-12 pb-24">
+    <div className="min-h-screen px-5 md:px-8 lg:px-12 pt-12 md:pt-10 pb-24 md:pb-12 max-w-2xl">
       <div className="flex items-center gap-3 mb-8">
         <button
           onClick={() => navigate(-1)}
