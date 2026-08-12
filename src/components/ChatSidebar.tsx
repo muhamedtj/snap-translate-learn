@@ -49,7 +49,7 @@ const ChatSidebar = () => {
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel className="px-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-1">
-            {t("nav.home")}
+            {t("sidebar.navigation", { defaultValue: "Navigation" })}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="px-2 gap-1">
