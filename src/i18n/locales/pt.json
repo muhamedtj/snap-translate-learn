@@ -158,5 +158,11 @@
       "pt": "Português",
       "kk": "Қазақша"
     }
+  },
+  "sidebar": {
+    "navigation": "Navegação",
+    "search": "Buscar snaps",
+    "recentSnaps": "Snaps recentes",
+    "seeAllHistory": "Ver todo o histórico"
   }
 }

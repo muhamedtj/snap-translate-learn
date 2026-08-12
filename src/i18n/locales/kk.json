@@ -158,5 +158,11 @@
       "pt": "Português",
       "kk": "Қазақша"
     }
+  },
+  "sidebar": {
+    "navigation": "Навигация",
+    "search": "Снимкілерді іздеу",
+    "recentSnaps": "Соңғы снимкілер",
+    "seeAllHistory": "Барлық тарих"
   }
 }
