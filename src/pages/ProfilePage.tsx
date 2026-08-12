@@ -264,7 +264,7 @@ const ProfilePage = () => {
       </div>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-2 gap-3 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
         {stats.map(({ icon: Icon, label, value, color }, i) => (
           <div key={label} className="card-volumetric p-4 animate-fade-up" style={{ animationDelay: `${i * 60}ms`, animationFillMode: "both" }}>
             <Icon size={20} className={`${color} mb-2`} strokeWidth={2.5} />
