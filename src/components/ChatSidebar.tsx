@@ -40,6 +40,36 @@ const ChatSidebar = () => {
 
       <SidebarContent>
         <SidebarGroup>
+          <SidebarGroupLabel className="px-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-1">
+            {t("nav.home")}
+          </SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="px-2 gap-1">
+              {navItems.map(({ path, icon: Icon, labelKey }) => {
+                const isActive = location.pathname === path;
+                return (
+                  <SidebarMenuItem key={path}>
+                    <SidebarMenuButton
+                      onClick={() => navigate(path)}
+                      isActive={isActive}
+                      className={cn(
+                        "rounded-xl py-2 px-3 transition-colors",
+                        isActive
+                          ? "bg-primary/10 text-primary"
+                          : "text-foreground/70 hover:bg-muted/50 hover:text-foreground"
+                      )}
+                    >
+                      <Icon size={16} />
+                      <span className="text-xs font-bold">{t(labelKey)}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
           <div className="px-4 mb-2">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={14} />
@@ -55,6 +85,7 @@ const ChatSidebar = () => {
           <SidebarGroupLabel className="px-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-1">
             {t("sidebar.recentSnaps")}
           </SidebarGroupLabel>
+
           
           <SidebarGroupContent>
             <SidebarMenu className="px-2 gap-1">
