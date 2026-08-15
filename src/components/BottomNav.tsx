@@ -16,7 +16,7 @@ const BottomNav = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t-2 border-border safe-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-border safe-bottom">
       <div className="flex items-center justify-around h-16 max-w-lg mx-auto">
         {tabs.map(({ path, icon: Icon, labelKey }) => {
           const active = location.pathname === path;
@@ -24,14 +24,12 @@ const BottomNav = () => {
             <button
               key={path}
               onClick={() => navigate(path)}
-              className={`flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-2xl transition-all duration-150 ${
-                active
-                  ? "text-primary"
-                  : "text-muted-foreground"
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 transition-colors duration-150 ${
+                active ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              <Icon size={24} strokeWidth={active ? 2.8 : 2} />
-              <span className="text-[10px] font-bold">{t(labelKey)}</span>
+              <Icon size={22} strokeWidth={active ? 2.4 : 2} />
+              <span className="text-[11px] font-semibold">{t(labelKey)}</span>
             </button>
           );
         })}
@@ -39,5 +37,6 @@ const BottomNav = () => {
     </nav>
   );
 };
+
 
 export default BottomNav;
