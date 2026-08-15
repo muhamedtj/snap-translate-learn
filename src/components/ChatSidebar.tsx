@@ -29,27 +29,25 @@ const ChatSidebar = () => {
   const { t } = useTranslation();
 
   return (
-    <Sidebar variant="sidebar" className="border-r-2 border-border/50 bg-sidebar/50 backdrop-blur-sm">
+    <Sidebar variant="sidebar" className="border-r border-border bg-sidebar">
       <SidebarHeader className="p-4 flex flex-col gap-4">
-        <div className="flex items-center gap-2 px-2">
-          <div className="w-8 h-8 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-black">L</div>
-          <span className="text-lg font-black tracking-tight">LingoSnap</span>
+        <div className="flex items-center justify-center py-2">
+          <span className="text-xl font-extrabold tracking-tight text-foreground">LingoSnap</span>
         </div>
-        
-        <button 
+
+        <button
           onClick={() => navigate("/scan")}
           className="btn-volumetric-primary w-full py-2.5 text-sm flex items-center justify-center gap-2"
-          style={{ borderBottomWidth: 4 }}
         >
-          <Plus size={16} />
-          <span>{t("dashboard.scanAndLearn")}</span>
+          <Scan size={16} />
+          <span>{t("nav.scanner")}</span>
         </button>
       </SidebarHeader>
 
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="px-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60 mb-1">
-            {t("sidebar.navigation", { defaultValue: "Navigation" })}
+          <SidebarGroupLabel className="px-4 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70 mb-1">
+            {t("sidebar.navigation", { defaultValue: "Home" })}
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="px-2 gap-1">
@@ -61,14 +59,14 @@ const ChatSidebar = () => {
                       onClick={() => navigate(path)}
                       isActive={isActive}
                       className={cn(
-                        "rounded-xl py-2 px-3 transition-colors",
+                        "relative rounded-xl py-5 px-3 transition-colors",
                         isActive
-                          ? "bg-primary/10 text-primary"
-                          : "text-foreground/70 hover:bg-muted/50 hover:text-foreground"
+                          ? "bg-transparent text-primary font-bold after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-5 after:w-1 after:rounded-full after:bg-primary"
+                          : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
                       )}
                     >
-                      <Icon size={16} />
-                      <span className="text-xs font-bold">{t(labelKey)}</span>
+                      <Icon size={18} />
+                      <span className="text-sm font-semibold">{t(labelKey)}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 );
@@ -76,6 +74,7 @@ const ChatSidebar = () => {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
 
         <SidebarGroup>
           <div className="px-4 mb-2">
