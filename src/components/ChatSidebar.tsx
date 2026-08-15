@@ -134,19 +134,21 @@ const ChatSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
 
-      <div className="mt-auto p-4 border-t border-border/30">
+      <div className="mt-auto p-4 border-t border-border">
         <SidebarMenu className="gap-1">
           <SidebarMenuItem>
-            <SidebarMenuButton 
+            <SidebarMenuButton
               onClick={() => navigate("/history")}
-              className="rounded-xl py-2 px-3 hover:bg-muted"
+              className="rounded-xl py-2 px-3 text-muted-foreground hover:bg-muted/60"
             >
               <History size={16} />
               <span className="text-xs font-semibold">{t("sidebar.seeAllHistory")}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
+        <p className="mt-3 px-3 text-[11px] font-medium text-muted-foreground/70">LingoSnap</p>
       </div>
+
     </Sidebar>
   );
 };
