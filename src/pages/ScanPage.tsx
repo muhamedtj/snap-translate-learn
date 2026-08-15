@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, Loader2, Check, Lock } from "lucide-react";
+import { Image, Loader2, Check, Lock, Zap, UploadCloud } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/contexts/AuthContext";
@@ -40,77 +40,69 @@ const ScanPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-foreground flex flex-col items-center justify-between pb-24 md:pb-12 pt-16 md:pt-12 relative">
+    <div className="min-h-screen flex flex-col pb-24 md:pb-12 pt-6 md:pt-8 px-5 md:px-8 lg:px-12">
       {/* Free scans counter */}
       {!user && state === "idle" && (
-        <div className="absolute top-4 right-4 px-3 py-1.5 rounded-xl bg-primary-foreground/10">
-          <span className="text-xs font-bold text-primary-foreground">
+        <div className="mb-4">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-muted-foreground/80 px-3.5 py-1.5 text-xs font-bold text-card">
+            <Zap size={13} className="text-warning" fill="currentColor" />
             {t("scan.remaining", { count: Math.max(remaining, 0) })}
           </span>
         </div>
       )}
 
-      {/* Viewfinder */}
-      <div className="flex-1 flex items-center justify-center w-full px-8 max-w-xl mx-auto">
+      <div className="flex-1 flex items-center justify-center w-full max-w-3xl mx-auto">
         {state === "idle" && (
-          <div className="w-full aspect-square rounded-3xl border-4 border-dashed border-primary-foreground/40 flex items-center justify-center">
-            <p className="text-primary-foreground/60 text-lg font-bold text-center px-4">
-              {t("scan.pointAtObject")}
-            </p>
+          <div className="w-full min-h-[60vh] rounded-3xl border-2 border-dashed border-primary/35 bg-card/40 flex flex-col items-center justify-center gap-3 px-6 py-16 text-center">
+            <UploadCloud size={56} className="text-primary" strokeWidth={1.75} />
+            <h2 className="text-xl font-extrabold text-foreground">{t("scan.pointAtObject")}</h2>
+            <p className="text-sm font-medium text-muted-foreground max-w-xs">{t("scan.extracting")}</p>
+            <button
+              onClick={handleCapture}
+              className="btn-volumetric-primary mt-4 w-full max-w-xs flex flex-col items-center gap-1"
+            >
+              <Image size={18} />
+              <span>{t("scan.chooseFile", { defaultValue: "Choose file" })}</span>
+            </button>
           </div>
         )}
 
         {state === "processing" && (
-          <div className="flex flex-col items-center gap-5">
-            <Loader2 size={56} className="text-primary-foreground animate-spin" />
-            <p className="text-primary-foreground font-bold text-lg">{t("scan.analyzing")}</p>
-            <p className="text-primary-foreground/60 text-sm font-semibold">{t("scan.extracting")}</p>
-            <div className="w-48 h-3 rounded-full overflow-hidden bg-primary-foreground/20">
+          <div className="flex flex-col items-center gap-5 py-24">
+            <Loader2 size={56} className="text-primary animate-spin" />
+            <p className="text-foreground font-extrabold text-lg">{t("scan.analyzing")}</p>
+            <p className="text-muted-foreground text-sm font-medium">{t("scan.extracting")}</p>
+            <div className="w-48 h-2.5 rounded-full overflow-hidden bg-muted">
               <div className="h-full animate-shimmer rounded-full" />
             </div>
           </div>
         )}
 
         {state === "done" && (
-          <div className="flex flex-col items-center gap-4 animate-bounce-in">
-            <div className="w-20 h-20 rounded-full bg-success flex items-center justify-center" style={{ borderBottomWidth: 6, borderBottomColor: "hsl(var(--success-dark))" }}>
+          <div className="flex flex-col items-center gap-4 py-24 animate-bounce-in">
+            <div className="w-20 h-20 rounded-full bg-success flex items-center justify-center shadow-soft">
               <Check size={40} className="text-success-foreground" />
             </div>
-            <p className="text-primary-foreground font-bold text-lg">{t("scan.complete")}</p>
+            <p className="text-foreground font-extrabold text-lg">{t("scan.complete")}</p>
           </div>
         )}
 
         {state === "limit" && (
-          <div className="flex flex-col items-center gap-5 px-4 text-center">
-            <div className="w-20 h-20 rounded-full bg-warning flex items-center justify-center" style={{ borderBottomWidth: 6, borderBottomColor: "hsl(var(--warning-dark))" }}>
+          <div className="flex flex-col items-center gap-4 px-4 py-24 text-center">
+            <div className="w-20 h-20 rounded-full bg-warning flex items-center justify-center shadow-soft">
               <Lock size={36} className="text-warning-foreground" />
             </div>
-            <p className="text-primary-foreground font-bold text-lg">{t("scan.limitTitle")}</p>
-            <p className="text-primary-foreground/60 text-sm font-semibold">{t("scan.limitDesc")}</p>
-            <button
-              onClick={() => navigate("/profile")}
-              className="btn-volumetric-primary px-8 py-3 text-base"
-            >
+            <p className="text-foreground font-extrabold text-lg">{t("scan.limitTitle")}</p>
+            <p className="text-muted-foreground text-sm font-medium">{t("scan.limitDesc")}</p>
+            <button onClick={() => navigate("/profile")} className="btn-volumetric-primary px-8">
               {t("scan.signUpToUnlock")}
             </button>
           </div>
         )}
       </div>
-
-      {/* Bottom controls */}
-      {state === "idle" && (
-        <div className="flex items-center justify-center gap-8 pb-20 md:pb-8">
-          <button onClick={handleCapture} className="w-10 h-10 rounded-2xl bg-primary-foreground/20 flex items-center justify-center">
-            <Image size={22} className="text-primary-foreground" />
-          </button>
-          <button onClick={handleCapture} className="w-20 h-20 rounded-full bg-primary-foreground flex items-center justify-center border-4 border-primary-foreground/50 active:scale-95 transition-transform">
-            <div className="w-16 h-16 rounded-full border-4 border-foreground/20" />
-          </button>
-          <div className="w-10 h-10" />
-        </div>
-      )}
     </div>
   );
 };
+
 
 export default ScanPage;

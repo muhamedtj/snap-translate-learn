@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+/* LingoSnap uses the native system sans stack (matching web.lingosnap.uk) */
 
 @tailwind base;
 @tailwind components;
@@ -44,17 +44,23 @@
     --input: 214 32% 91%;
     --ring: 239 84% 67%;
 
-    --radius: 1.25rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(250 84% 60%));
+    --gradient-streak: linear-gradient(135deg, hsl(28 95% 58%), hsl(20 90% 52%));
+    --shadow-soft: 0 1px 2px hsl(222 47% 11% / 0.04), 0 6px 20px -8px hsl(222 47% 11% / 0.08);
+    --shadow-raised: 0 10px 30px -12px hsl(239 84% 40% / 0.25);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 20% 40%;
     --sidebar-primary: 239 84% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 239 84% 96%;
-    --sidebar-accent-foreground: 239 84% 40%;
-    --sidebar-border: 220 13% 91%;
+    --sidebar-accent: 239 84% 97%;
+    --sidebar-accent-foreground: 239 84% 55%;
+    --sidebar-border: 214 32% 91%;
     --sidebar-ring: 239 84% 67%;
   }
+
 }
 
 @layer base {
@@ -64,7 +70,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Nunito', system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 }
 
@@ -72,43 +78,83 @@
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @layer components {
+  /* Flat LingoSnap buttons: solid fill, soft radius, subtle lift */
   .btn-volumetric {
-    @apply relative font-extrabold text-lg rounded-2xl px-6 py-4 transition-all duration-100 active:translate-y-[3px] active:border-b-[3px];
-    border-bottom-width: 6px;
+    @apply relative font-bold text-base rounded-2xl px-6 py-3.5 transition-all duration-150 active:scale-[0.98];
+    box-shadow: var(--shadow-soft);
   }
 
   .btn-volumetric-primary {
     @apply btn-volumetric text-primary-foreground;
     background-color: hsl(var(--primary));
-    border-bottom-color: hsl(var(--primary-dark));
+  }
+
+  .btn-volumetric-gradient {
+    @apply btn-volumetric text-primary-foreground;
+    background-image: var(--gradient-primary);
+    box-shadow: var(--shadow-raised);
+  }
+
+  .btn-volumetric-soft {
+    @apply btn-volumetric text-primary;
+    background-color: hsl(var(--accent));
+    box-shadow: none;
   }
 
   .btn-volumetric-success {
     @apply btn-volumetric text-success-foreground;
     background-color: hsl(var(--success));
-    border-bottom-color: hsl(var(--success-dark));
   }
 
   .btn-volumetric-destructive {
     @apply btn-volumetric text-destructive-foreground;
     background-color: hsl(var(--destructive));
-    border-bottom-color: hsl(var(--destructive-dark));
   }
 
   .btn-volumetric-warning {
     @apply btn-volumetric text-warning-foreground;
-    background-color: hsl(var(--warning));
-    border-bottom-color: hsl(var(--warning-dark));
+    background-image: var(--gradient-streak);
   }
 
   .card-volumetric {
-    @apply bg-card rounded-3xl border-2 border-border;
-    border-bottom-width: 4px;
+    @apply bg-card rounded-2xl border border-border/70;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .chip {
+    @apply rounded-full px-4 py-2 text-sm font-bold border border-border bg-card text-muted-foreground transition-colors whitespace-nowrap;
+  }
+
+  .chip-active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .input-pill {
+    @apply w-full bg-card rounded-full border border-border/70 px-5 py-3.5 text-base font-medium text-foreground placeholder:text-muted-foreground outline-none focus:border-primary/60 transition-colors;
+    box-shadow: var(--shadow-soft);
   }
 }
+
 
 @keyframes shimmer {
   0% { background-position: -200% 0; }
