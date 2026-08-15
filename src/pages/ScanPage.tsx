@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Image, Loader2, Check, Lock } from "lucide-react";
+import { Image, Loader2, Check, Lock, Zap, UploadCloud } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "@/contexts/AuthContext";
